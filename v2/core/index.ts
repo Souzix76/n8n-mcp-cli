@@ -11,3 +11,4 @@ export * from './audit.js';
 export * from './n8n-client.js';
 export * from './config-schema.js';
 export * from './async-runner.js';
+export * from './dep-guard.js';

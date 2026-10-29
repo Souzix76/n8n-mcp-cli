@@ -1,0 +1,104 @@
+name: Dependency Check
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Weekly Monday 6am UTC
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run npm audit
+        run: npm audit --audit-level=high
+        continue-on-error: false
+
+  outdated:
+    name: Outdated Dependencies Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Needed for PR comments
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for outdated packages
+        id: outdated
+        run: |
+          npm outdated --json > outdated.json || true
+          OUTDATED_COUNT=$(jq 'length' outdated.json)
+          echo "outdated_count=$OUTDATED_COUNT" >> $GITHUB_OUTPUT
+          if [ "$OUTDATED_COUNT" -gt 0 ]; then
+            echo "Found $OUTDATED_COUNT outdated packages"
+            cat outdated.json
+          else
+            echo "All packages up to date"
+          fi
+
+      - name: Comment on PR with outdated packages
+        if: github.event_name == 'pull_request' && steps.outdated.outputs.outdated_count > 0
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const outdated = JSON.parse(fs.readFileSync('outdated.json', 'utf8'));
+            
+            const body = `## ⚠️ Outdated Dependencies Detected\n\n` +
+              `Found **${outdated.length}** outdated package(s):\n\n` +
+              outdated.map(d => 
+                `- **${d.name}**: \`${d.current}\` → \`${d.latest}\` (wanted: \`${d.wanted}\`)`
+              ).join('\n') +
+              `\n\n> Run \`npm update\` to update to wanted versions, or \`npm install <pkg>@latest\` for latest.`;
+            
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });
+
+  dep-guard:
+    name: Runtime Dependency Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run dep-guard validation
+        run: npx tsx v2/core/dep-guard.ts
