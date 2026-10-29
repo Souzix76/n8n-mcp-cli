@@ -1,3 +1,19 @@
+import type { ExecutionData } from '../core/n8n-client.js';
+
+export type Execution = ExecutionData;
+
+export interface NodeExecution {
+  status: 'success' | 'error' | 'crashed';
+  executionTime?: number;
+  error?: { message: string; code?: string };
+}
+
+export interface Workflow {
+  id: string;
+  name: string;
+  nodes?: string[];
+}
+
 export interface TraceNode {
   id: string;
   name: string;
@@ -76,18 +92,6 @@ export interface RegressionDetectorConfig {
   minRuns?: number;
 }
 
-export interface RegressionReport {
-  flakyNodes: FlakyNodeResult[];
-  driftingNodes: DriftingNodeResult[];
-  newFailures: NewFailureResult[];
-  summary: {
-    totalNodesAnalyzed: number;
-    flakyCount: number;
-    driftingCount: number;
-    newFailureCount: number;
-  };
-}
-
 export interface RegressionItem {
   type: 'new_failure' | 'recurring_failure' | 'score_degradation' | 'new_bottleneck';
   nodeId: string;
@@ -103,6 +107,10 @@ export interface RegressionReport {
   regressions: RegressionItem[];
   policyDrift: boolean;
   recommendation: string;
+  // Detector output passthrough
+  flakyNodes?: FlakyNodeResult[];
+  driftingNodes?: DriftingNodeResult[];
+  newFailures?: NewFailureResult[];
 }
 
 export interface DiagnoseResult {
