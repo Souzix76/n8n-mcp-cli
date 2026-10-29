@@ -1,0 +1,58 @@
+{
+  "workflowId": "replace-with-workflow-id",
+  "workflowName": "api-data-pipeline",
+  "triggerMode": "execute",
+  "timeoutMs": 30000,
+  "qualityThreshold": 90,
+  "testPayloads": [
+    {
+      "name": "single-record",
+      "data": {
+        "records": [
+          { "id": "rec_001", "name": "Test Record", "status": "active" }
+        ]
+      }
+    },
+    {
+      "name": "batch-records",
+      "data": {
+        "records": [
+          { "id": "rec_001", "name": "Record 1", "status": "active" },
+          { "id": "rec_002", "name": "Record 2", "status": "pending" },
+          { "id": "rec_003", "name": "Record 3", "status": "active" }
+        ]
+      }
+    },
+    {
+      "name": "empty-batch",
+      "data": {
+        "records": []
+      }
+    }
+  ],
+  "tier3Checks": [
+    {
+      "name": "has-processed-count",
+      "field": "processed",
+      "check": "not_empty",
+      "severity": "error",
+      "message": "Pipeline must return processed count"
+    },
+    {
+      "name": "no-errors-field",
+      "field": "errors",
+      "check": "equals",
+      "value": 0,
+      "severity": "error",
+      "message": "Pipeline should have zero errors"
+    },
+    {
+      "name": "has-summary",
+      "field": "summary",
+      "check": "min_length",
+      "value": 20,
+      "severity": "warning",
+      "message": "Summary should be descriptive"
+    }
+  ]
+}

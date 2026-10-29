@@ -1,0 +1,56 @@
+{
+  "workflowName": "telegram-bot-commands",
+  "triggerMode": "webhook",
+  "webhookPath": "/webhook/telegram-bot",
+  "timeoutMs": 15000,
+  "qualityThreshold": 85,
+  "testPayloads": [
+    {
+      "name": "start-command",
+      "data": {
+        "message": {
+          "chat": { "id": 123456789 },
+          "text": "/start",
+          "from": { "first_name": "Test", "id": 123456789 }
+        }
+      }
+    },
+    {
+      "name": "help-command",
+      "data": {
+        "message": {
+          "chat": { "id": 123456789 },
+          "text": "/help",
+          "from": { "first_name": "Test", "id": 123456789 }
+        }
+      }
+    },
+    {
+      "name": "unknown-command",
+      "data": {
+        "message": {
+          "chat": { "id": 123456789 },
+          "text": "/nonexistent",
+          "from": { "first_name": "Test", "id": 123456789 }
+        }
+      }
+    }
+  ],
+  "tier3Checks": [
+    {
+      "name": "has-chat-id",
+      "field": "chat_id",
+      "check": "not_empty",
+      "severity": "error",
+      "message": "Response must include chat_id"
+    },
+    {
+      "name": "has-text-response",
+      "field": "text",
+      "check": "min_length",
+      "value": 10,
+      "severity": "warning",
+      "message": "Bot response should be at least 10 characters"
+    }
+  ]
+}

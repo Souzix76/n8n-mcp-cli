@@ -1,0 +1,835 @@
+# n8n Nodes Catalog (v2.12.0)
+
+Total nodes: 436
+Total credentials: 389
+
+## Nodes
+
+- **ActionNetwork**
+- **ActiveCampaign**
+- **ActiveCampaignTrigger** (Trigger)
+- **AcuitySchedulingTrigger** (Trigger)
+- **Adalo**
+- **Affinity**
+- **AffinityTrigger** (Trigger)
+- **AgileCrm**
+- **Airtable**
+- **AirtableTrigger** (Trigger)
+- **Airtop**
+- **AiTransform**
+- **Amqp**
+- **AmqpTrigger** (Trigger)
+- **ApiTemplateIo**
+- **Asana**
+- **AsanaTrigger** (Trigger)
+- **Autopilot**
+- **AutopilotTrigger** (Trigger)
+- **AwsLambda**
+- **AwsSns**
+- **AwsSnsTrigger** (Trigger)
+- **AwsCertificateManager**
+- **AwsCognito**
+- **AwsComprehend**
+- **AwsDynamoDB**
+- **AwsElb**
+- **AwsIam**
+- **AwsRekognition**
+- **AwsS3**
+- **AwsSes**
+- **AwsSqs**
+- **AwsTextract**
+- **AwsTranscribe**
+- **BambooHr**
+- **Bannerbear**
+- **Baserow**
+- **Beeminder**
+- **BitbucketTrigger** (Trigger)
+- **Bitly**
+- **Bitwarden**
+- **Box**
+- **BoxTrigger** (Trigger)
+- **Brandfetch**
+- **Bubble**
+- **CalTrigger** (Trigger)
+- **CalendlyTrigger** (Trigger)
+- **Chargebee**
+- **ChargebeeTrigger** (Trigger)
+- **CircleCi**
+- **CiscoWebex**
+- **CiscoWebexTrigger** (Trigger)
+- **Cloudflare**
+- **Clearbit**
+- **ClickUp**
+- **ClickUpTrigger** (Trigger)
+- **Clockify**
+- **ClockifyTrigger** (Trigger)
+- **Cockpit**
+- **Coda**
+- **Code**
+- **CoinGecko**
+- **CompareDatasets**
+- **Compression**
+- **Contentful**
+- **ConvertKit**
+- **ConvertKitTrigger** (Trigger)
+- **Copper**
+- **CopperTrigger** (Trigger)
+- **Cortex**
+- **CrateDb**
+- **Cron**
+- **Crypto**
+- **Currents**
+- **CurrentsTrigger** (Trigger)
+- **CustomerIo**
+- **CustomerIoTrigger** (Trigger)
+- **DataTable**
+- **DateTime**
+- **DebugHelper**
+- **DeepL**
+- **Demio**
+- **Dhl**
+- **Discord**
+- **Discourse**
+- **Disqus**
+- **Drift**
+- **Dropbox**
+- **Dropcontact**
+- **EditImage**
+- **E2eTest**
+- **Egoi**
+- **Elasticsearch**
+- **ElasticSecurity**
+- **EmailReadImap**
+- **EmailSend**
+- **Emelia**
+- **EmeliaTrigger** (Trigger)
+- **ERPNext**
+- **ErrorTrigger** (Trigger)
+- **EvaluationTrigger.node.ee.js** (Trigger)
+- **Evaluation.node.ee.js**
+- **EventbriteTrigger** (Trigger)
+- **ExecuteCommand**
+- **ExecuteWorkflow**
+- **ExecuteWorkflowTrigger** (Trigger)
+- **ExecutionData**
+- **FacebookGraphApi**
+- **FacebookTrigger** (Trigger)
+- **FacebookLeadAdsTrigger** (Trigger)
+- **FigmaTrigger** (Trigger)
+- **FileMaker**
+- **ReadWriteFile**
+- **ConvertToFile**
+- **ExtractFromFile**
+- **Filter**
+- **Flow**
+- **FlowTrigger** (Trigger)
+- **Form**
+- **FormTrigger** (Trigger)
+- **FormIoTrigger** (Trigger)
+- **FormstackTrigger** (Trigger)
+- **Freshdesk**
+- **Freshservice**
+- **FreshworksCrm**
+- **Ftp**
+- **Function**
+- **FunctionItem**
+- **GetResponse**
+- **GetResponseTrigger** (Trigger)
+- **Ghost**
+- **Git**
+- **Github**
+- **GithubTrigger** (Trigger)
+- **Gitlab**
+- **GitlabTrigger** (Trigger)
+- **Gong**
+- **GoogleAds**
+- **GoogleAnalytics**
+- **GoogleBigQuery**
+- **GoogleBooks**
+- **GoogleCalendar**
+- **GoogleCalendarTrigger** (Trigger)
+- **GoogleChat**
+- **GoogleCloudNaturalLanguage**
+- **GoogleCloudStorage**
+- **GoogleContacts**
+- **GoogleDocs**
+- **GoogleDrive**
+- **GoogleDriveTrigger** (Trigger)
+- **GoogleFirebaseCloudFirestore**
+- **GoogleFirebaseRealtimeDatabase**
+- **Gmail**
+- **GmailTrigger** (Trigger)
+- **GSuiteAdmin**
+- **GoogleBusinessProfile**
+- **GoogleBusinessProfileTrigger** (Trigger)
+- **GooglePerspective**
+- **GoogleSheets**
+- **GoogleSheetsTrigger** (Trigger)
+- **GoogleSlides**
+- **GoogleTasks**
+- **GoogleTranslate**
+- **YouTube**
+- **Gotify**
+- **GoToWebinar**
+- **Grafana**
+- **GraphQL**
+- **Grist**
+- **GumroadTrigger** (Trigger)
+- **HackerNews**
+- **HaloPSA**
+- **Harvest**
+- **HelpScout**
+- **HelpScoutTrigger** (Trigger)
+- **HighLevel**
+- **HomeAssistant**
+- **HtmlExtract**
+- **Html**
+- **HttpRequest**
+- **Hubspot**
+- **HubspotTrigger** (Trigger)
+- **HumanticAi**
+- **Hunter**
+- **ICalendar**
+- **If**
+- **Intercom**
+- **Interval**
+- **InvoiceNinja**
+- **InvoiceNinjaTrigger** (Trigger)
+- **ItemLists**
+- **Iterable**
+- **Jenkins**
+- **JinaAi**
+- **Jira**
+- **JiraTrigger** (Trigger)
+- **JotFormTrigger** (Trigger)
+- **Jwt**
+- **Kafka**
+- **KafkaTrigger** (Trigger)
+- **Keap**
+- **KeapTrigger** (Trigger)
+- **KoBoToolbox**
+- **KoBoToolboxTrigger** (Trigger)
+- **Ldap**
+- **Lemlist**
+- **LemlistTrigger** (Trigger)
+- **Line**
+- **Linear**
+- **LinearTrigger** (Trigger)
+- **LingvaNex**
+- **LinkedIn**
+- **LocalFileTrigger** (Trigger)
+- **LoneScaleTrigger** (Trigger)
+- **LoneScale**
+- **Magento2**
+- **Mailcheck**
+- **Mailchimp**
+- **MailchimpTrigger** (Trigger)
+- **MailerLite**
+- **MailerLiteTrigger** (Trigger)
+- **Mailgun**
+- **Mailjet**
+- **MailjetTrigger** (Trigger)
+- **Mandrill**
+- **ManualTrigger** (Trigger)
+- **Markdown**
+- **Marketstack**
+- **Matrix**
+- **Mattermost**
+- **Mautic**
+- **MauticTrigger** (Trigger)
+- **Medium**
+- **Merge**
+- **MessageBird**
+- **Metabase**
+- **AzureCosmosDb**
+- **MicrosoftDynamicsCrm**
+- **MicrosoftEntra**
+- **MicrosoftExcel**
+- **MicrosoftGraphSecurity**
+- **MicrosoftOneDrive**
+- **MicrosoftOneDriveTrigger** (Trigger)
+- **MicrosoftOutlook**
+- **MicrosoftOutlookTrigger** (Trigger)
+- **MicrosoftSharePoint**
+- **MicrosoftSql**
+- **AzureStorage**
+- **MicrosoftTeams**
+- **MicrosoftTeamsTrigger** (Trigger)
+- **MicrosoftToDo**
+- **Mindee**
+- **Misp**
+- **MistralAi**
+- **Mocean**
+- **MondayCom**
+- **MongoDb**
+- **MonicaCrm**
+- **MoveBinaryData**
+- **Mqtt**
+- **MqttTrigger** (Trigger)
+- **Msg91**
+- **MySql**
+- **N8n**
+- **N8nTrainingCustomerDatastore**
+- **N8nTrainingCustomerMessenger**
+- **N8nTrigger** (Trigger)
+- **Nasa**
+- **Netlify**
+- **NetlifyTrigger** (Trigger)
+- **NextCloud**
+- **NocoDB**
+- **Brevo**
+- **BrevoTrigger** (Trigger)
+- **StickyNote**
+- **NoOp**
+- **Onfleet**
+- **OnfleetTrigger** (Trigger)
+- **NetscalerAdc**
+- **Notion**
+- **NotionTrigger** (Trigger)
+- **Npm**
+- **Odoo**
+- **Okta**
+- **OneSimpleApi**
+- **OpenAi**
+- **OpenThesaurus**
+- **OpenWeatherMap**
+- **OracleSql**
+- **Orbit**
+- **Oura**
+- **Paddle**
+- **PagerDuty**
+- **PayPal**
+- **PayPalTrigger** (Trigger)
+- **Peekalink**
+- **Perplexity**
+- **Phantombuster**
+- **PhilipsHue**
+- **Pipedrive**
+- **PipedriveTrigger** (Trigger)
+- **Plivo**
+- **PostBin**
+- **Postgres**
+- **PostgresTrigger** (Trigger)
+- **PostHog**
+- **PostmarkTrigger** (Trigger)
+- **ProfitWell**
+- **Pushbullet**
+- **Pushcut**
+- **PushcutTrigger** (Trigger)
+- **Pushover**
+- **QuestDb**
+- **QuickBase**
+- **QuickBooks**
+- **QuickChart**
+- **RabbitMQ**
+- **RabbitMQTrigger** (Trigger)
+- **Raindrop**
+- **ReadBinaryFile**
+- **ReadBinaryFiles**
+- **ReadPDF**
+- **Reddit**
+- **Redis**
+- **RedisTrigger** (Trigger)
+- **RenameKeys**
+- **RespondToWebhook**
+- **Rocketchat**
+- **RssFeedRead**
+- **RssFeedReadTrigger** (Trigger)
+- **Rundeck**
+- **S3**
+- **Salesforce**
+- **SalesforceTrigger** (Trigger)
+- **Salesmate**
+- **ScheduleTrigger** (Trigger)
+- **SeaTable**
+- **SeaTableTrigger** (Trigger)
+- **SecurityScorecard**
+- **Segment**
+- **SendGrid**
+- **Sendy**
+- **SentryIo**
+- **ServiceNow**
+- **Set**
+- **Shopify**
+- **ShopifyTrigger** (Trigger)
+- **Signl4**
+- **Simulate**
+- **SimulateTrigger** (Trigger)
+- **Slack**
+- **SlackTrigger** (Trigger)
+- **Sms77**
+- **Snowflake**
+- **SplitInBatches**
+- **Splunk**
+- **Spotify**
+- **SpreadsheetFile**
+- **SseTrigger** (Trigger)
+- **Ssh**
+- **Stackby**
+- **StopAndError**
+- **Storyblok**
+- **Strapi**
+- **Strava**
+- **StravaTrigger** (Trigger)
+- **Stripe**
+- **StripeTrigger** (Trigger)
+- **Supabase**
+- **SurveyMonkeyTrigger** (Trigger)
+- **Switch**
+- **SyncroMsp**
+- **Taiga**
+- **TaigaTrigger** (Trigger)
+- **Tapfiliate**
+- **Telegram**
+- **TelegramTrigger** (Trigger)
+- **TheHiveProject**
+- **TheHiveProjectTrigger** (Trigger)
+- **TheHive**
+- **TheHiveTrigger** (Trigger)
+- **TimescaleDb**
+- **Todoist**
+- **TogglTrigger** (Trigger)
+- **Totp**
+- **TravisCi**
+- **Trello**
+- **TrelloTrigger** (Trigger)
+- **TimeSaved**
+- **Twake**
+- **Twilio**
+- **TwilioTrigger** (Trigger)
+- **Twist**
+- **Twitter**
+- **TypeformTrigger** (Trigger)
+- **UnleashedSoftware**
+- **Uplead**
+- **UProc**
+- **UptimeRobot**
+- **UrlScanIo**
+- **Vero**
+- **VenafiTlsProtectCloud**
+- **VenafiTlsProtectCloudTrigger** (Trigger)
+- **VenafiTlsProtectDatacenter**
+- **Vonage**
+- **Wait**
+- **Webflow**
+- **WebflowTrigger** (Trigger)
+- **Webhook**
+- **Wekan**
+- **WhatsAppTrigger** (Trigger)
+- **WhatsApp**
+- **Wise**
+- **WiseTrigger** (Trigger)
+- **WooCommerce**
+- **WooCommerceTrigger** (Trigger)
+- **Wordpress**
+- **WorkableTrigger** (Trigger)
+- **WorkflowTrigger** (Trigger)
+- **WriteBinaryFile**
+- **WufooTrigger** (Trigger)
+- **Xero**
+- **Xml**
+- **Yourls**
+- **Zammad**
+- **Zendesk**
+- **ZendeskTrigger** (Trigger)
+- **ZohoCrm**
+- **Zoom**
+- **Zulip**
+- **Aggregate**
+- **Limit**
+- **RemoveDuplicates**
+- **SplitOut**
+- **Sort**
+- **Summarize**
+
+## Credentials
+
+- ActionNetworkApi
+- ActiveCampaignApi
+- AcuitySchedulingApi
+- AcuitySchedulingOAuth2Api
+- AdaloApi
+- AffinityApi
+- AgileCrmApi
+- AirtableApi
+- AirtableOAuth2Api
+- AirtableTokenApi
+- AirtopApi
+- AlienVaultApi
+- Amqp
+- ApiTemplateIoApi
+- AsanaApi
+- AsanaOAuth2Api
+- Auth0ManagementApi
+- AutopilotApi
+- Aws
+- AwsAssumeRole
+- AzureStorageOAuth2Api
+- AzureStorageSharedKeyApi
+- BambooHrApi
+- BannerbearApi
+- BaserowApi
+- BaserowTokenApi
+- BeeminderApi
+- BeeminderOAuth2Api
+- BitbucketAccessTokenApi
+- BitbucketApi
+- BitlyApi
+- BitlyOAuth2Api
+- BitwardenApi
+- BoxOAuth2Api
+- BrandfetchApi
+- BubbleApi
+- CalApi
+- CalendlyApi
+- CalendlyOAuth2Api
+- CarbonBlackApi
+- ChargebeeApi
+- CircleCiApi
+- CiscoMerakiApi
+- CiscoSecureEndpointApi
+- CiscoWebexOAuth2Api
+- CiscoUmbrellaApi
+- CloudflareApi
+- ClearbitApi
+- ClickUpApi
+- ClickUpOAuth2Api
+- ClockifyApi
+- CockpitApi
+- CodaApi
+- ContentfulApi
+- ConvertApi
+- ConvertKitApi
+- CopperApi
+- CortexApi
+- CrateDb
+- CrowdStrikeOAuth2Api
+- Crypto
+- CurrentsApi
+- CustomerIoApi
+- DatadogApi
+- DeepLApi
+- DemioApi
+- DfirIrisApi
+- DhlApi
+- DiscordBotApi
+- DiscordOAuth2Api
+- DiscordWebhookApi
+- DiscourseApi
+- DisqusApi
+- DriftApi
+- DriftOAuth2Api
+- DropboxApi
+- DropboxOAuth2Api
+- DropcontactApi
+- DynatraceApi
+- EgoiApi
+- ElasticsearchApi
+- ElasticSecurityApi
+- EmeliaApi
+- ERPNextApi
+- EventbriteApi
+- EventbriteOAuth2Api
+- F5BigIpApi
+- FacebookGraphApi
+- FacebookGraphAppApi
+- FacebookLeadAdsOAuth2Api
+- FigmaApi
+- FileMaker
+- FilescanApi
+- FlowApi
+- FormIoApi
+- FormstackApi
+- FormstackOAuth2Api
+- FortiGateApi
+- FreshdeskApi
+- FreshserviceApi
+- FreshworksCrmApi
+- Ftp
+- GetResponseApi
+- GetResponseOAuth2Api
+- GhostAdminApi
+- GhostContentApi
+- GithubApi
+- GithubOAuth2Api
+- GitlabApi
+- GitlabOAuth2Api
+- GitPassword
+- GmailOAuth2Api
+- GongApi
+- GongOAuth2Api
+- GoogleAdsOAuth2Api
+- GoogleAnalyticsOAuth2Api
+- GoogleApi
+- GoogleBigQueryOAuth2Api
+- GoogleBooksOAuth2Api
+- GoogleCalendarOAuth2Api
+- GoogleChatOAuth2Api
+- GoogleCloudNaturalLanguageOAuth2Api
+- GoogleCloudStorageOAuth2Api
+- GoogleContactsOAuth2Api
+- GoogleDocsOAuth2Api
+- GoogleDriveOAuth2Api
+- GoogleFirebaseCloudFirestoreOAuth2Api
+- GoogleFirebaseRealtimeDatabaseOAuth2Api
+- GoogleBusinessProfileOAuth2Api
+- GoogleOAuth2Api
+- GooglePerspectiveOAuth2Api
+- GoogleSheetsOAuth2Api
+- GoogleSheetsTriggerOAuth2Api
+- GoogleSlidesOAuth2Api
+- GoogleTasksOAuth2Api
+- GoogleTranslateOAuth2Api
+- GotifyApi
+- GoToWebinarOAuth2Api
+- GristApi
+- GrafanaApi
+- GSuiteAdminOAuth2Api
+- GumroadApi
+- HaloPSAApi
+- HarvestApi
+- HarvestOAuth2Api
+- HelpScoutOAuth2Api
+- HighLevelApi
+- HighLevelOAuth2Api
+- HomeAssistantApi
+- HttpBasicAuth
+- HttpBearerAuth
+- HttpDigestAuth
+- HttpHeaderAuth
+- HttpMultipleHeadersAuth
+- HttpCustomAuth
+- HttpQueryAuth
+- HttpSslAuth
+- HubspotApi
+- HubspotAppToken
+- HubspotDeveloperApi
+- HubspotOAuth2Api
+- HumanticAiApi
+- HunterApi
+- HybridAnalysisApi
+- Imap
+- ImpervaWafApi
+- IntercomApi
+- InvoiceNinjaApi
+- IterableApi
+- JenkinsApi
+- JinaAiApi
+- JiraSoftwareCloudApi
+- JiraSoftwareServerApi
+- JiraSoftwareServerPatApi
+- JotFormApi
+- JwtAuth
+- Kafka
+- KeapOAuth2Api
+- KibanaApi
+- KoBoToolboxApi
+- Ldap
+- LemlistApi
+- LinearApi
+- LinearOAuth2Api
+- LineNotifyOAuth2Api
+- LingvaNexApi
+- LinkedInCommunityManagementOAuth2Api
+- LinkedInOAuth2Api
+- LoneScaleApi
+- Magento2Api
+- MailcheckApi
+- MailchimpApi
+- MailchimpOAuth2Api
+- MailerLiteApi
+- MailgunApi
+- MailjetEmailApi
+- MailjetSmsApi
+- MalcoreApi
+- MandrillApi
+- MarketstackApi
+- MatrixApi
+- MattermostApi
+- MauticApi
+- MauticOAuth2Api
+- MediumApi
+- MediumOAuth2Api
+- MetabaseApi
+- MessageBirdApi
+- MetabaseApi
+- MicrosoftAzureCosmosDbSharedKeyApi
+- MicrosoftAzureMonitorOAuth2Api
+- MicrosoftDynamicsOAuth2Api
+- MicrosoftEntraOAuth2Api
+- MicrosoftExcelOAuth2Api
+- MicrosoftGraphSecurityOAuth2Api
+- MicrosoftOAuth2Api
+- MicrosoftOneDriveOAuth2Api
+- MicrosoftOutlookOAuth2Api
+- MicrosoftSharePointOAuth2Api
+- MicrosoftSql
+- MicrosoftTeamsOAuth2Api
+- MicrosoftToDoOAuth2Api
+- MindeeInvoiceApi
+- MindeeReceiptApi
+- MiroOAuth2Api
+- MispApi
+- MistApi
+- MoceanApi
+- MondayComApi
+- MondayComOAuth2Api
+- MongoDb
+- MonicaCrmApi
+- Mqtt
+- Msg91Api
+- MySql
+- N8nApi
+- NasaApi
+- NetlifyApi
+- NetscalerAdcApi
+- NextCloudApi
+- NextCloudOAuth2Api
+- NocoDb
+- NocoDbApiToken
+- NotionApi
+- NotionOAuth2Api
+- NpmApi
+- OAuth1Api
+- OAuth2Api
+- OdooApi
+- OktaApi
+- OneSimpleApi
+- OnfleetApi
+- OpenAiApi
+- OpenCTIApi
+- OpenWeatherMapApi
+- OracleDBApi
+- OrbitApi
+- OuraApi
+- PaddleApi
+- PagerDutyApi
+- PagerDutyOAuth2Api
+- PayPalApi
+- PeekalinkApi
+- PerplexityApi
+- PhantombusterApi
+- PhilipsHueOAuth2Api
+- PipedriveApi
+- PipedriveOAuth2Api
+- PlivoApi
+- Postgres
+- PostHogApi
+- PostmarkApi
+- ProfitWellApi
+- PushbulletOAuth2Api
+- PushcutApi
+- PushoverApi
+- QRadarApi
+- QualysApi
+- QuestDb
+- QuickBaseApi
+- QuickBooksOAuth2Api
+- RabbitMQ
+- RaindropOAuth2Api
+- Rapid7InsightVmApi
+- RecordedFutureApi
+- RedditOAuth2Api
+- Redis
+- RocketchatApi
+- RundeckApi
+- S3
+- SalesforceJwtApi
+- SalesforceOAuth2Api
+- SalesmateApi
+- SeaTableApi
+- SecurityScorecardApi
+- SegmentApi
+- SekoiaApi
+- SendGridApi
+- BrevoApi
+- SendyApi
+- SentryIoApi
+- SentryIoOAuth2Api
+- SentryIoServerApi
+- ServiceNowOAuth2Api
+- ServiceNowBasicApi
+- Sftp
+- ShopifyApi
+- ShopifyAccessTokenApi
+- ShopifyOAuth2Api
+- Signl4Api
+- SlackApi
+- SlackOAuth2Api
+- Sms77Api
+- Smtp
+- Snowflake
+- SolarWindsIpamApi
+- SolarWindsObservabilityApi
+- SplunkApi
+- SpotifyOAuth2Api
+- ShufflerApi
+- SshPassword
+- SshPrivateKey
+- StackbyApi
+- StoryblokContentApi
+- StoryblokManagementApi
+- StrapiApi
+- StrapiTokenApi
+- StravaOAuth2Api
+- StripeApi
+- SupabaseApi
+- SurveyMonkeyApi
+- SurveyMonkeyOAuth2Api
+- SyncroMspApi
+- SysdigApi
+- TaigaApi
+- TapfiliateApi
+- TelegramApi
+- TheHiveProjectApi
+- TheHiveApi
+- TimescaleDb
+- TodoistApi
+- TodoistOAuth2Api
+- TogglApi
+- TotpApi
+- TravisCiApi
+- TrellixEpoApi
+- TrelloApi
+- TwakeCloudApi
+- TwakeServerApi
+- TwilioApi
+- TwistOAuth2Api
+- TwitterOAuth1Api
+- TwitterOAuth2Api
+- TypeformApi
+- TypeformOAuth2Api
+- UnleashedSoftwareApi
+- UpleadApi
+- UProcApi
+- UptimeRobotApi
+- UrlScanIoApi
+- VeroApi
+- VerticaApi
+- VirusTotalApi
+- VonageApi
+- VenafiTlsProtectCloudApi
+- VenafiTlsProtectDatacenterApi
+- WebflowApi
+- WebflowOAuth2Api
+- WekanApi
+- WhatsAppApi
+- WhatsAppTriggerApi
+- WiseApi
+- WooCommerceApi
+- WordpressApi
+- WorkableApi
+- WufooApi
+- XeroOAuth2Api
+- YourlsApi
+- YouTubeOAuth2Api
+- ZabbixApi
+- ZammadBasicAuthApi
+- ZammadTokenAuthApi
+- ZendeskApi
+- ZendeskOAuth2Api
+- ZohoOAuth2Api
+- ZoomApi
+- ZoomOAuth2Api
+- ZscalerZiaApi
+- ZulipApi

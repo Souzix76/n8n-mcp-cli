@@ -1,0 +1,26 @@
+{
+  "workflowId": "replace-me",
+  "workflowName": "example-webhook-test",
+  "triggerMode": "webhook",
+  "webhookPath": "/webhook/example",
+  "timeoutMs": 30000,
+  "qualityThreshold": 85,
+  "testPayloads": [
+    {
+      "name": "standard",
+      "data": { "message": "olá" }
+    },
+    {
+      "name": "edge-empty",
+      "data": { "message": "" }
+    }
+  ],
+  "tier3Checks": [
+    {
+      "name": "output not empty",
+      "field": "output",
+      "check": "not_empty",
+      "severity": "error"
+    }
+  ]
+}
