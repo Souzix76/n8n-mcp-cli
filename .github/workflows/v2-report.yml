@@ -1,0 +1,22 @@
+name: v2-report
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - v2/**
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          cache: npm
+      - run: npm ci
+      - run: npx n8n-mcp-cli@latest v2 report --ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v2-report
+          path: v2-report.txt

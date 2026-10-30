@@ -31,6 +31,26 @@ export function parseCredentialMode(args: string[]): CredentialMode {
   return value as CredentialMode;
 }
 
+export function parseCiFlag(args: string[]): boolean {
+  return args.includes('--ci');
+}
+
+export function removeCiFlag(args: string[]): string[] {
+  return args.filter(arg => arg !== '--ci');
+}
+
+export function parseCredentialModeAndCiFlag(args: string[]): { mode: CredentialMode; ci: boolean } {
+  const mode = parseCredentialMode(args);
+  const ci = parseCiFlag(args);
+  return { mode, ci };
+}
+
+export function removeCredentialModeAndCiArgs(args: string[]): string[] {
+  let filtered = removeCredentialModeArgs(args);
+  filtered = removeCiFlag(filtered);
+  return filtered;
+}
+
 export function removeCredentialModeArgs(args: string[]): string[] {
   const modeIndex = args.findIndex(arg => arg === '--credential-mode' || arg.startsWith('--credential-mode='));
   
@@ -52,6 +72,7 @@ export function removeCredentialModeArgs(args: string[]): string[] {
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { generateV2Report, generateV2ReportCi } from './report.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -70,7 +91,16 @@ export const baseCommands: CliCommand[] = [
   {
     name: 'report',
     description: 'Generate a report from execution output.',
-    run: async () => 'Report command placeholder for v2.',
+    run: async (...args: string[]) => {
+      const { ci } = parseCredentialModeAndCiFlag(args);
+      const filteredArgs = removeCredentialModeAndCiArgs(args);
+      
+      if (ci) {
+        return generateV2ReportCi();
+      }
+      
+      return generateV2Report();
+    },
   },
   {
     name: 'registry',

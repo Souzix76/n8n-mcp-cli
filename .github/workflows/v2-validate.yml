@@ -1,0 +1,20 @@
+name: v2-validate
+on:
+  push:
+    branches: [ main, fresh-main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+      - run: npm ci
+      - run: npx tsc --noEmit --project v2/tsconfig.json
+      - run: npm run lint
+      - run: cd v2 && npm test
+      - run: npx n8n-mcp-cli@latest v2 report --ci
