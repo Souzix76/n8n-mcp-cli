@@ -13,7 +13,7 @@ export function parseCredentialMode(args: string[]): CredentialMode {
     return 'read-only';
   }
   
-  const arg = args[modeIndex];
+  const arg = args[modeIndex] ?? '';
   
   if (arg === '--credential-mode') {
     const value = args[modeIndex + 1];
@@ -24,7 +24,7 @@ export function parseCredentialMode(args: string[]): CredentialMode {
   }
   
   // --credential-mode=value format
-  const value = arg.split('=')[1];
+  const value = arg.split('=')[1] ?? '';
   if (!value || (value !== 'read-only' && value !== 'external')) {
     throw new Error(`Invalid credential mode: ${value}. Must be 'read-only' or 'external'`);
   }
@@ -129,10 +129,10 @@ export const baseCommands: CliCommand[] = [
           if (manifest.packages) {
             manifest.packages.forEach((pkg: unknown, i: number) => {
               const p = pkg as Record<string, unknown>;
-              if (!p.registryType) errors.push(`Package ${i}: missing registryType`);
-              if (!p.identifier) errors.push(`Package ${i}: missing identifier`);
-              if (!p.transport) errors.push(`Package ${i}: missing transport`);
-              if (!p.version) errors.push(`Package ${i}: missing version`);
+              if (!p['registryType']) errors.push(`Package ${i}: missing registryType`);
+              if (!p['identifier']) errors.push(`Package ${i}: missing identifier`);
+              if (!p['transport']) errors.push(`Package ${i}: missing transport`);
+              if (!p['version']) errors.push(`Package ${i}: missing version`);
             });
           }
 

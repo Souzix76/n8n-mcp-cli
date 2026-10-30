@@ -59,11 +59,11 @@ export class FailureClassifier {
     if (!nodeData || typeof nodeData !== 'object' || !('error' in nodeData)) {
       return { message: 'Unknown error' };
     }
-    const error = (nodeData as Record<string, unknown>).error as Record<string, unknown>;
+    const error = (nodeData as Record<string, unknown>)['error'] as Record<string, unknown>;
     // Ensure message is always a meaningful string that includes relevant keywords
     let message: string;
-    const code = error.code ? String(error.code) : undefined;
-    const originalMessage = error.message && typeof error.message === 'string' ? String(error.message) : '';
+    const code = error['code'] ? String(error['code']) : undefined;
+    const originalMessage = error['message'] && typeof error['message'] === 'string' ? String(error['message']) : '';
 
     // Always enhance message based on code, even when there's an original message
     if (code) {
@@ -83,10 +83,11 @@ export class FailureClassifier {
     } else {
       message = 'Unknown error';
     }
-    return {
-      message,
-      code,
-    };
+    const result: { message: string; code?: string } = { message };
+    if (code !== undefined) {
+      result.code = code;
+    }
+    return result;
   }
 
   private determineCategory(

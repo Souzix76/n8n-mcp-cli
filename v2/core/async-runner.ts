@@ -35,11 +35,11 @@ export interface AsyncRunnerOptions {
 
 export class AsyncRunner {
   private defaultTimeout: number;
-  private globalProgressCallback?: (progress: { stage: string; progress: number; meta?: Record<string, unknown> }) => void;
+  private globalProgressCallback: (progress: { stage: string; progress: number; meta?: Record<string, unknown> }) => void | undefined;
 
   constructor(options: AsyncRunnerOptions = {}) {
     this.defaultTimeout = options.defaultTimeout ?? 120000;
-    this.globalProgressCallback = options.onProgress;
+    this.globalProgressCallback = options.onProgress ?? (() => {});
   }
 
   async run<T>(

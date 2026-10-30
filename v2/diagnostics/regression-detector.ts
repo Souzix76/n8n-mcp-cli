@@ -131,7 +131,7 @@ export class RegressionDetector {
     const nodeFailures = new Map<string, { recent: number; historical: boolean }>();
 
     for (let i = 0; i < sortedExecutions.length; i++) {
-      const execution = sortedExecutions[i];
+      const execution = sortedExecutions[i]!;
       const runData = execution.data?.resultData?.runData;
       if (!runData) continue;
 

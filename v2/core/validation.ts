@@ -12,7 +12,7 @@ export interface ValidationResult {
 export function validateEnvironmentConfig(input: Record<string, unknown>): ValidationResult {
   const issues: ValidationIssue[] = [];
 
-  if (!input.N8N_BASE_URL || typeof input.N8N_BASE_URL !== 'string') {
+  if (!input['N8N_BASE_URL'] || typeof input['N8N_BASE_URL'] !== 'string') {
     issues.push({
       path: 'N8N_BASE_URL',
       message: 'Environment variable N8N_BASE_URL is required.',
@@ -20,7 +20,7 @@ export function validateEnvironmentConfig(input: Record<string, unknown>): Valid
     });
   }
 
-  if (!input.N8N_API_KEY || typeof input.N8N_API_KEY !== 'string') {
+  if (!input['N8N_API_KEY'] || typeof input['N8N_API_KEY'] !== 'string') {
     issues.push({
       path: 'N8N_API_KEY',
       message: 'Environment variable N8N_API_KEY is required.',

@@ -188,12 +188,12 @@ export class DiagnoseEngine {
         if (Array.isArray(nodeRuns) && nodeRuns.length > 0) {
           const nodeData = nodeRuns[0] as Record<string, unknown> | undefined;
           // Extract json from nested data.main[0].json structure
-          const dataObj = nodeData?.data as Record<string, unknown> | undefined;
-          const mainArr = dataObj?.main as Array<Record<string, unknown>> | undefined;
-          const jsonObj = mainArr?.[0]?.json;
+          const dataObj = nodeData ? (nodeData['data'] as Record<string, unknown> | undefined) : undefined;
+          const mainArr = dataObj ? (dataObj['main'] as Array<Record<string, unknown>> | undefined) : undefined;
+          const jsonObj = mainArr && mainArr[0] ? (mainArr[0]['json']) : undefined;
           if (jsonObj && typeof jsonObj === 'object' && 'error' in jsonObj) {
             failedNodes.push(nodeName);
-          } else if (nodeData?.status === 'error') {
+          } else if (nodeData ? nodeData['status'] : undefined === 'error') {
             failedNodes.push(nodeName);
           }
         }
@@ -258,11 +258,11 @@ export class DiagnoseEngine {
     execution: ExecutionData
   ): string {
     if (flakyNodes.length > 0) {
-      const node = flakyNodes[0];
+      const node = flakyNodes[0]!;
       return `Investigate ${node.nodeId} — flaky with ${Math.round(node.failureRate * 100)}% failure rate`;
     }
     if (driftingNodes.length > 0) {
-      const node = driftingNodes[0];
+      const node = driftingNodes[0]!;
       return `Monitor ${node.nodeId} — performance drift of ${node.driftPercent}%`;
     }
     if (newFailures.length > 0) {

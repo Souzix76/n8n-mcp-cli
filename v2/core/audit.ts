@@ -33,12 +33,15 @@ export function emitAudit(
   context: Record<string, unknown> = {},
   workflowId?: string,
 ): void {
-  auditLog.record({
+  const entry: Omit<AuditEntry, 'timestamp'> = {
     level,
     operation,
     environment,
     message,
     context,
-    workflowId,
-  });
+  };
+  if (workflowId !== undefined) {
+    entry.workflowId = workflowId;
+  }
+  auditLog.record(entry);
 }

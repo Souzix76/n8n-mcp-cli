@@ -36,9 +36,9 @@ async function loadPackageJson(): Promise<PackageJson> {
 
 export async function validateDependencies(): Promise<void> {
   const pkg = await loadPackageJson();
-  const allDeps = { ...pkg.dependencies, ...pkg.devDependencies };
+  const allDeps = { ...pkg.dependencies, ...pkg.devDependencies } as Record<string, string>;
   
-  const zodVersion = allDeps?.zod;
+  const zodVersion = allDeps['zod'];
   
   if (!zodVersion) {
     throw new DependencyVersionError(
@@ -85,9 +85,9 @@ export function validateDependenciesSync(): void {
   
   const content = fs.readFileSync(packagePath, 'utf-8');
   const pkg = JSON.parse(content) as PackageJson;
-  const allDeps = { ...pkg.dependencies, ...pkg.devDependencies };
+  const allDeps = { ...pkg.dependencies, ...pkg.devDependencies } as Record<string, string>;
   
-  const zodVersion = allDeps?.zod;
+  const zodVersion = allDeps['zod'];
   
   if (!zodVersion) {
     throw new DependencyVersionError(

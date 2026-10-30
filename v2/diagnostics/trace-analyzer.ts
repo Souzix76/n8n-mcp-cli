@@ -50,11 +50,15 @@ export class TraceAnalyzer {
       const status = this.determineNodeStatus(name, runData, execution.status);
       const rawDuration = this.estimateNodeDuration(name, index, runData, execution);
       const durationMs = Math.floor(rawDuration * scale);
-      const inputSize = this.estimateSize(nodeData?.input);
-      const outputSize = this.estimateSize(nodeData?.output ?? nodeData?.response ?? nodeData?.json);
+      const inputSize = this.estimateSize(nodeData ? nodeData['input'] : undefined);
+      const outputSize = this.estimateSize(nodeData ? nodeData['output'] ?? nodeData['response'] ?? nodeData['json'] : undefined);
+
+      const errorObj = nodeData ? (nodeData['error'] as Record<string, unknown> | undefined) : undefined;
+      const errorMessage = errorObj ? String(errorObj['message'] ?? 'Unknown error') : 'Unknown error';
+      const errorCode = errorObj ? String(errorObj['code'] ?? 'NODE_ERROR') : 'NODE_ERROR';
 
       return {
-        id: name.toLowerCase().replace(/\s+/g, '-'),
+        id: name.toLowerCase().replace(/\\s+/g, '-'),
         name,
         type: this.inferNodeType(name),
         status,
@@ -62,7 +66,7 @@ export class TraceAnalyzer {
         inputSize,
         outputSize,
         error: hasError
-          ? { message: String((nodeData as Record<string, unknown>).error && typeof (nodeData as Record<string, unknown>).error === 'object' ? ((nodeData as Record<string, unknown>).error as Record<string, unknown>).message ?? 'Unknown error' : 'Unknown error'), code: String((nodeData as Record<string, unknown>).error && typeof (nodeData as Record<string, unknown>).error === 'object' ? ((nodeData as Record<string, unknown>).error as Record<string, unknown>).code ?? 'NODE_ERROR' : 'NODE_ERROR') }
+          ? { message: errorMessage, code: errorCode }
           : null,
       };
     });

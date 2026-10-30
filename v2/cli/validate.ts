@@ -6,9 +6,9 @@ import { emitAudit } from '../core/audit.js';
 
 export async function validateV2Project(env: Record<string, unknown>): Promise<string> {
   const validation = validateEnvironmentConfig(env);
-  const environment = String(env.N8N_ENVIRONMENT ?? 'prod-safe');
+  const environment = String(env['N8N_ENVIRONMENT'] ?? 'prod-safe');
   const policy = getEnvironmentPolicy(environment);
-  const health = await checkN8nHealth(String(env.N8N_BASE_URL ?? ''));
+  const health = await checkN8nHealth(String(env['N8N_BASE_URL'] ?? ''));
 
   const policyDecision = evaluatePolicy({
     environment: policy.environment,
@@ -20,7 +20,7 @@ export async function validateV2Project(env: Record<string, unknown>): Promise<s
   logger.info('Starting v2 validation flow', {
     environment,
     operation: 'validate_workflow',
-    workflowId: String(env.WORKFLOW_ID ?? 'unknown'),
+    workflowId: String(env['WORKFLOW_ID'] ?? 'unknown'),
   });
 
   emitAudit('info', 'validate_workflow', environment, 'Validation check started', {

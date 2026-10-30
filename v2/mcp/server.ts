@@ -130,7 +130,7 @@ export function createMcpServer(client: N8nClient, credentialMode: CredentialMod
       if (!resolvedExecutionId) {
         const { data: executions } = await client.getExecutions(workflowId, 1);
         if (executions.length > 0) {
-          resolvedExecutionId = executions[0].id;
+          resolvedExecutionId = executions[0]!.id;
         } else {
           throw new Error(`No executions found for workflow ${workflowId}`);
         }
