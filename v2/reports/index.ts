@@ -1,4 +1,4 @@
-import type { ReportArtifact, ReportContext } from './types.js';
+import type { ReportArtifact, ReportContext } from './report-generator.js';
 
 export function generateJsonReport(ctx: ReportContext): ReportArtifact {
   return {

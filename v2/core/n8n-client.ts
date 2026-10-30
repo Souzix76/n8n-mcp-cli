@@ -23,7 +23,11 @@ export interface ExecutionData {
   status: 'running' | 'success' | 'error' | 'crashed';
   startedAt: string;
   stoppedAt?: string;
-  data?: Record<string, unknown>;
+  data?: {
+    resultData?: {
+      runData?: Record<string, unknown[]>;
+    };
+  } & Record<string, unknown>;
 }
 
 export interface ExecuteWorkflowOptions {

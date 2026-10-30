@@ -4,7 +4,7 @@ export class JunitReportGenerator {
   static render(report: ExecutionReport): string {
     const tests = report.sections
       .map(
-        (section) =>
+        (section: { title: string; content: unknown }) =>
           `  <testcase classname="workflow" name="${section.title}" time="0">${JSON.stringify(section.content)}</testcase>`,
       )
       .join('\n');

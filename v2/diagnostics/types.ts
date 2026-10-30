@@ -111,6 +111,13 @@ export interface RegressionReport {
   flakyNodes?: FlakyNodeResult[];
   driftingNodes?: DriftingNodeResult[];
   newFailures?: NewFailureResult[];
+  // Summary of detection results
+  summary?: {
+    totalNodesAnalyzed: number;
+    flakyCount: number;
+    driftingCount: number;
+    newFailureCount: number;
+  };
 }
 
 export interface DiagnoseResult {

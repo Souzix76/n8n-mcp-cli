@@ -11,6 +11,18 @@ export interface ReportContext {
   results: Array<{ name: string; passed: boolean; message: string }>;
 }
 
+export interface ExecutionReport {
+  summary: {
+    status: string;
+    score: number;
+    environment: string;
+  };
+  sections: Array<{
+    title: string;
+    content: unknown;
+  }>;
+}
+
 export function generateJsonReport(ctx: ReportContext): ReportArtifact {
   return {
     format: 'json',

@@ -1,4 +1,4 @@
-import type { AssertionRule } from './assertions.js';
+import type { AssertionRule } from '../testing/assertions.js';
 
 export const baseEnvironmentRules: AssertionRule[] = [
   { path: 'N8N_ENVIRONMENT', operator: 'exists', message: 'Environment name must exist.' },
@@ -19,4 +19,17 @@ export function createEnvironmentRules(environment: string): AssertionRule[] {
   }
 
   return baseRules;
+}
+
+export interface ReportArtifact {
+  format: 'json' | 'markdown' | 'html' | 'junit';
+  content: string;
+}
+
+export interface ReportContext {
+  suiteName: string;
+  environment: string;
+  passed: boolean;
+  summary: string;
+  results: Array<{ name: string; passed: boolean; message: string }>;
 }

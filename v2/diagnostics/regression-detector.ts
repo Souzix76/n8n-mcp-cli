@@ -5,7 +5,7 @@ import type {
   NewFailureResult,
   RegressionReport,
   RegressionDetectorConfig,
-} from '../types.js';
+} from './types.js';
 
 export class RegressionDetector {
   detectFlakyNodes(
@@ -23,10 +23,10 @@ export class RegressionDetector {
       const runData = execution.data?.resultData?.runData;
       if (!runData) continue;
 
-      for (const [nodeId, nodeRunsArray] of Object.entries(runData)) {
+      for (const [nodeId, nodeRunsArray] of Object.entries(runData as Record<string, unknown[]>)) {
         if (!Array.isArray(nodeRunsArray) || nodeRunsArray.length === 0) continue;
 
-        const nodeRun = nodeRunsArray[0];
+        const nodeRun = nodeRunsArray[0] as { status?: string; executionTime?: unknown };
         const existing = nodeRuns.get(nodeId) || { total: 0, failures: 0 };
         existing.total += 1;
         if (nodeRun.status === 'error') {
@@ -70,10 +70,10 @@ export class RegressionDetector {
       const runData = execution.data?.resultData?.runData;
       if (!runData) continue;
 
-      for (const [nodeId, nodeRunsArray] of Object.entries(runData)) {
+      for (const [nodeId, nodeRunsArray] of Object.entries(runData as Record<string, unknown[]>)) {
         if (!Array.isArray(nodeRunsArray) || nodeRunsArray.length === 0) continue;
 
-        const nodeRun = nodeRunsArray[0];
+        const nodeRun = nodeRunsArray[0] as { status?: string; executionTime?: unknown };
         if (typeof nodeRun.executionTime !== 'number') continue;
 
         const existing = nodeTimes.get(nodeId) || [];
@@ -135,10 +135,10 @@ export class RegressionDetector {
       const runData = execution.data?.resultData?.runData;
       if (!runData) continue;
 
-      for (const [nodeId, nodeRunsArray] of Object.entries(runData)) {
+      for (const [nodeId, nodeRunsArray] of Object.entries(runData as Record<string, unknown[]>)) {
         if (!Array.isArray(nodeRunsArray) || nodeRunsArray.length === 0) continue;
 
-        const nodeRun = nodeRunsArray[0];
+        const nodeRun = nodeRunsArray[0] as { status?: string; executionTime?: unknown };
         const existing = nodeFailures.get(nodeId) || { recent: 0, historical: false };
 
         if (nodeRun.status === 'error') {

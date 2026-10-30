@@ -9,7 +9,7 @@ export class MarkdownReportGenerator {
       `- Score: ${report.summary.score}`,
       `- Environment: ${report.summary.environment}`,
       '',
-      ...report.sections.map((section) => `## ${section.title}\n\n${JSON.stringify(section.content, null, 2)}`),
+      ...report.sections.map((section: { title: string; content: unknown }) => `## ${section.title}\n\n${JSON.stringify(section.content, null, 2)}`),
     ].join('\n');
   }
 }

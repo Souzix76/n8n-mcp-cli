@@ -4,7 +4,7 @@ export interface CliCommand {
   run: (...args: string[]) => Promise<string>;
 }
 
-export type CredentialMode = 'read-only' | 'external';
+import { CredentialMode } from '../core/errors.js';
 
 export function parseCredentialMode(args: string[]): CredentialMode {
   const modeIndex = args.findIndex(arg => arg === '--credential-mode' || arg.startsWith('--credential-mode='));

@@ -4,7 +4,7 @@ export * from './errors.js';
 export * from './validation.js';
 export * from './retry.js';
 export * from './policy.js';
-export * from './environment-policy.js';
+// export * from './environment-policy.js';  // duplicates EnvironmentName
 export * from './dry-run.js';
 export * from './health.js';
 export * from './audit.js';

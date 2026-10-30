@@ -1,0 +1,53 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "name": "io.github.souzix76/n8n-mcp-cli",
+  "description": "MCP server for n8n workflow validation, health checking, and diagnostics. Provides tools to validate workflows, check health scores, analyze execution traces, classify failures, and detect regressions.",
+  "title": "n8n MCP CLI",
+  "websiteUrl": "https://github.com/Souzix76/n8n-mcp-cli",
+  "repository": {
+    "url": "https://github.com/Souzix76/n8n-mcp-cli",
+    "source": "github"
+  },
+  "version": "2.1.9",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "n8n-mcp-cli",
+      "version": "2.1.9",
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeHint": "npx",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "environmentVariables": [
+        {
+          "name": "N8N_BASE_URL",
+          "description": "Base URL of the n8n instance (e.g., https://your-n8n.example.com)",
+          "isRequired": true,
+          "isSecret": false
+        },
+        {
+          "name": "N8N_API_KEY",
+          "description": "API key for n8n authentication",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "tool": "npm-publisher",
+      "version": "1.0.0",
+      "build_info": {
+        "timestamp": "2026-10-29T23:30:00Z"
+      }
+    }
+  }
+}

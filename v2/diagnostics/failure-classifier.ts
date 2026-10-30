@@ -1,5 +1,5 @@
 import { FailureClassification, FailureCategory, FailureSeverity, ClassifyConfig } from './types.js';
-import { ExecutionData } from '../../core/n8n-client.js';
+import { ExecutionData } from '../core/n8n-client.js';
 
 export class FailureClassifier {
   private taxonomy: FailureCategory[];

@@ -15,7 +15,7 @@ export interface SuiteExecutionResult extends AssertionSuiteResult {
   environment: string;
   status: 'passed' | 'failed';
   summary: string;
-  reports: Array<{ format: 'json' | 'markdown' | 'junit'; content: string }>;
+  reports: Array<{ format: 'json' | 'markdown' | 'html' | 'junit'; content: string }>;
 }
 
 export function runValidationSuite({ name, environment, input, rules }: SuiteExecutionInput): SuiteExecutionResult {

@@ -1,5 +1,5 @@
 import { TraceAnalysis, TraceNode } from './types.js';
-import { WorkflowSummary, ExecutionData } from '../../core/n8n-client.js';
+import { WorkflowSummary, ExecutionData } from '../core/n8n-client.js';
 
 export class TraceAnalyzer {
   async analyze(workflow: WorkflowSummary, execution: ExecutionData): Promise<TraceAnalysis> {
@@ -33,17 +33,17 @@ export class TraceAnalyzer {
     const runData = execution.data?.resultData?.runData as Record<string, unknown[]> | undefined;
 
     // Pre-calculate all durations to normalize them
-    const rawDurations = nodeNames.map((name, index) =>
+    const rawDurations = nodeNames.map((name: string, index: number) =>
       this.estimateNodeDuration(name, index, runData, execution)
     );
 
     // Normalize durations so sum <= totalDuration
-    const totalRaw = rawDurations.reduce((a, b) => a + b, 0);
+    const totalRaw = rawDurations.reduce((a: number, b: number) => a + b, 0);
     const totalDuration = (execution.stoppedAt ? new Date(execution.stoppedAt).getTime() : Date.now()) -
       (execution.startedAt ? new Date(execution.startedAt).getTime() : Date.now());
     const scale = totalRaw > 0 ? Math.min(1, (totalDuration * 0.9) / totalRaw) : 1;
 
-    return nodeNames.map((name, index) => {
+    return nodeNames.map((name: string, index: number) => {
       const nodeData = runData?.[name]?.[0]?.data?.main?.[0]?.json;
       const hasError = nodeData && typeof nodeData === 'object' && 'error' in nodeData;
 
@@ -136,7 +136,7 @@ export class TraceAnalyzer {
     if (nodes.length === 0) return [];
 
     const durations = nodes.map((n) => n.durationMs);
-    const avg = durations.reduce((a, b) => a + b, 0) / durations.length;
+    const avg = durations.reduce((a: number, b: number) => a + b, 0) / durations.length;
     // Dynamic threshold: longer executions use lower threshold to catch bottlenecks
     const thresholdMultiplier = totalDurationMs > 5000 ? 1.8 : 2.5;
     const threshold = avg * thresholdMultiplier;
