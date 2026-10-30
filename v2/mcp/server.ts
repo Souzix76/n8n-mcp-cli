@@ -98,6 +98,22 @@ export function createMcpServer(client: N8nClient, credentialMode: CredentialMod
   });
 
   server.registerTool({
+    name: 'get_n8n_version',
+    description: 'Get the n8n server version. Note: n8n v1 API does not expose version via REST endpoint. This checks if the endpoint exists and provides context on how to check version.',
+    allowedModes: ['read-only', 'external'],
+    execution: async () => {
+      const versionInfo = await client.getVersion();
+      // Also check health to confirm server is reachable
+      const health = await client.healthCheck();
+      return {
+        ...versionInfo,
+        health: health.status,
+        note: 'n8n does not expose version via REST API. Check docker logs (grep "Version:"), UI footer, or docker image tag.'
+      };
+    },
+  });
+
+  server.registerTool({
     name: 'suggest_nodes',
     description: 'Suggest compatible nodes based on a task description and workflow context.',
     allowedModes: ['read-only', 'external'],

@@ -106,4 +106,18 @@ export class N8nClient {
     const response = await fetch(`${this.baseUrl}/healthz`, { signal: AbortSignal.timeout(5000) });
     return response.json() as Promise<{ status: string }>;
   }
+
+  async getVersion(): Promise<{ version: string; source: string }> {
+    try {
+      const result = await this.request<{ version: string }>('/api/v1/version');
+      return { version: result.version, source: 'api' };
+    } catch (error) {
+      // n8n v1 API doesn't have a version endpoint
+      // Try to get version from health check headers or return unknown
+      return { 
+        version: 'unknown (n8n API does not expose version endpoint)',
+        source: 'api-unavailable'
+      };
+    }
+  }
 }
