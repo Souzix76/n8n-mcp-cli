@@ -20,7 +20,7 @@
 
 ## Why?
 
-Most n8n MCP integrations give you **full admin access** — credentials, destructive operations, auto-fix loops. That's fine for development, but risky for CI, shared environments, or autonomous agents.
+Most n8n MCP integrations give you **full admin access** — credentials, destructive operations, auto-fix loops. That works for development. It's risky for CI, shared environments, or autonomous agents.
 
 `n8n-mcp-cli` takes a different approach:
 

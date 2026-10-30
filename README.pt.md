@@ -20,7 +20,7 @@
 
 ## Porquê?
 
-A maioria das integrações MCP para n8n dá **acesso total de admin** — credenciais, operações destrutivas, loops de auto-fix. Isso serve para desenvolvimento, mas é arriscado para CI, ambientes partilhados ou agentes autónomos.
+A maioria das integrações MCP para n8n dá **acesso total de admin** — credenciais, operações destrutivas, loops de auto-fix. Isso funciona para desenvolvimento. É arriscado para CI, ambientes partilhados ou agentes autónomos.
 
 O `n8n-mcp-cli` segue uma abordagem diferente:
 
