@@ -30,7 +30,7 @@ export class TraceAnalyzer {
 
   private extractNodes(workflow: WorkflowSummary, execution: ExecutionData): TraceNode[] {
     const nodeNames = workflow.nodes ?? [];
-    const runData = execution.data?.resultData?.runData as Record<string, unknown[]> | undefined;
+    const runData = execution.data?.resultData?.runData as Record<string, Array<{ data?: { main?: Array<{ json?: unknown }> } }>> | undefined;
 
     // Pre-calculate all durations to normalize them
     const rawDurations = nodeNames.map((name: string, index: number) =>
@@ -44,7 +44,7 @@ export class TraceAnalyzer {
     const scale = totalRaw > 0 ? Math.min(1, (totalDuration * 0.9) / totalRaw) : 1;
 
     return nodeNames.map((name: string, index: number) => {
-      const nodeData = runData?.[name]?.[0]?.data?.main?.[0]?.json;
+      const nodeData = runData?.[name]?.[0]?.data?.main?.[0]?.json as Record<string, unknown> | undefined;
       const hasError = nodeData && typeof nodeData === 'object' && 'error' in nodeData;
 
       const status = this.determineNodeStatus(name, runData, execution.status);
@@ -62,7 +62,7 @@ export class TraceAnalyzer {
         inputSize,
         outputSize,
         error: hasError
-          ? { message: String((nodeData as Record<string, unknown>).error?.message ?? 'Unknown error'), code: String((nodeData as Record<string, unknown>).error?.code ?? 'NODE_ERROR') }
+          ? { message: String((nodeData as Record<string, unknown>).error && typeof (nodeData as Record<string, unknown>).error === 'object' ? ((nodeData as Record<string, unknown>).error as Record<string, unknown>).message ?? 'Unknown error' : 'Unknown error'), code: String((nodeData as Record<string, unknown>).error && typeof (nodeData as Record<string, unknown>).error === 'object' ? ((nodeData as Record<string, unknown>).error as Record<string, unknown>).code ?? 'NODE_ERROR' : 'NODE_ERROR') }
           : null,
       };
     });
@@ -70,7 +70,7 @@ export class TraceAnalyzer {
 
   private determineNodeStatus(
     name: string,
-    runData: Record<string, unknown[]> | undefined,
+    runData: Record<string, Array<{ data?: { main?: Array<{ json?: unknown }> } }>> | undefined,
     executionStatus: ExecutionData['status']
   ): TraceNode['status'] {
     const nodeData = runData?.[name]?.[0]?.data?.main?.[0]?.json;
@@ -86,7 +86,7 @@ export class TraceAnalyzer {
   private estimateNodeDuration(
     name: string,
     index: number,
-    runData: Record<string, unknown[]> | undefined,
+    runData: Record<string, Array<{ data?: { main?: Array<{ json?: unknown }> } }>> | undefined,
     execution: ExecutionData
   ): number {
     const startedAt = execution.startedAt ? new Date(execution.startedAt).getTime() : Date.now();

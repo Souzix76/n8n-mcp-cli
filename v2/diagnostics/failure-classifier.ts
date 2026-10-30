@@ -16,7 +16,7 @@ export class FailureClassifier {
     }
   ): Promise<FailureClassification> {
     const taxonomy = config.taxonomy ?? this.taxonomy;
-    const runData = execution.data?.resultData?.runData as Record<string, unknown[]> | undefined;
+    const runData = execution.data?.resultData?.runData as Record<string, Array<{ data?: { main?: Array<{ json?: unknown }> } }>> | undefined;
 
     // Find the failed node and error
     const failedNode = this.findFailedNode(runData);
@@ -42,7 +42,7 @@ export class FailureClassifier {
     return classification;
   }
 
-  private findFailedNode(runData: Record<string, unknown[]> | undefined): { nodeName: string; nodeData: unknown } | null {
+  private findFailedNode(runData: Record<string, Array<{ data?: { main?: Array<{ json?: unknown }> } }>> | undefined): { nodeName: string; nodeData: unknown } | null {
     if (!runData) return null;
 
     for (const [nodeName, nodeRuns] of Object.entries(runData)) {
@@ -288,7 +288,7 @@ export class FailureClassifier {
     return actions;
   }
 
-  private findRelatedNodes(failedNodeName: string | undefined, runData: Record<string, unknown[]> | undefined, errorMessage?: string): string[] {
+  private findRelatedNodes(failedNodeName: string | undefined, runData: Record<string, Array<{ data?: { main?: Array<{ json?: unknown }> } }>> | undefined, errorMessage?: string): string[] {
     if (!failedNodeName || !runData) {
       // Fallback: try to extract from error message
       if (errorMessage && errorMessage.includes('HTTP Request')) {

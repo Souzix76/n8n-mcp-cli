@@ -170,7 +170,17 @@ export class RegressionDetector {
   analyze(
     executions: Execution[],
     config: RegressionDetectorConfig
-  ): RegressionReport {
+  ): {
+    flakyNodes: FlakyNodeResult[];
+    driftingNodes: DriftingNodeResult[];
+    newFailures: NewFailureResult[];
+    summary: {
+      totalNodesAnalyzed: number;
+      flakyCount: number;
+      driftingCount: number;
+      newFailureCount: number;
+    };
+  } {
     const flakyResult = this.detectFlakyNodes(executions, {
       threshold: config.flakyThreshold ?? 0.2,
       minRuns: config.minRuns ?? 5,
