@@ -35,7 +35,15 @@ O `n8n-mcp-cli` segue uma abordagem diferente:
 | **Ciclo de vida de secrets** | ❌ Excluída | ✅ Sim |
 | **Loops de auto-reparo destrutivos** | ❌ Excluída | ✅ Alguns |
 
-**Resultado:** Uma camada operacional focada que faz validação, diagnóstico e avaliação de saúde realmente bem, sem a superfície de risco de um wrapper admin completo.
+**Resultado:** Uma camada operacional focada que faz validação, diagnóstico e avaliação de saúde bem, sem a superfície de risco de um wrapper admin completo.
+
+---
+
+##Pré-requisitos
+
+- **Node.js** ≥ 18
+- **n8n** em execução e acessível (testado nas versões 2.12.x, 2.13.x, 2.14.x)
+- **Chave API n8n** com permissões adequadas
 
 ---
 
@@ -128,7 +136,7 @@ O servidor MCP impõe uma fronteira estrita de credenciais via a factory `create
 import { createMcpServer } from './dist/mcp/server.js';
 import { N8nClient } from './dist/core/n8n-client.js';
 
-const client = new N8nClient({ baseUrl: 'http://localhost:5678', apiKey: '...' });
+const client = new N8nClient({ baseUrl: 'http://localhost:5678', apiKey: process.env.N8N_API_KEY });
 
 // Read-only (padrão)
 const server = createMcpServer(client, 'read-only');
@@ -219,6 +227,17 @@ import { startMcpServer } from './dist/cli/mcp.js';
 ```
 
 *Comando executável `n8n-mcp-cli` a chegar na Fase 3.*
+
+---
+
+## Resolução de Problemas
+
+| Problema | Causa | Correção |
+|----------|-------|----------|
+|  | n8n não está em execução ou  incorreto | Verificar se o n8n está em execução na porta 5678; verificar  |
+|  | Chave  inválida ou ausente | Gerar chave na UI do n8n → Definições → API; atualizar  |
+|  | Chave API não tem permissões adequadas | Certificar-se de que a chave tem acesso de leitura/escrita a workflows |
+|  |  muito baixo para workflows grandes | Aumentar o timeout em  (padrão 30000ms) |
 
 ---
 

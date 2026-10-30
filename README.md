@@ -35,7 +35,15 @@ Most n8n MCP integrations give you **full admin access** — credentials, destru
 | **Secret lifecycle** | ❌ Excluded | ✅ Yes |
 | **Destructive auto-repair loops** | ❌ Excluded | ✅ Some |
 
-**Result:** A focused operational layer that does validation, diagnostics, and health assessment really well, without the risk surface of a full admin wrapper.
+**Result:** A focused operational layer that does validation, diagnostics, and health assessment well, without the risk surface of a full admin wrapper.
+
+---
+
+## Prerequisites
+
+- **Node.js** ≥ 18
+- **n8n** running and accessible (tested on 2.12.x, 2.13.x, 2.14.x)
+- **n8n API key** with appropriate permissions
 
 ---
 
@@ -128,7 +136,7 @@ The MCP server enforces a strict credential boundary via the `createMcpServer` f
 import { createMcpServer } from './dist/mcp/server.js';
 import { N8nClient } from './dist/core/n8n-client.js';
 
-const client = new N8nClient({ baseUrl: 'http://localhost:5678', apiKey: '...' });
+const client = new N8nClient({ baseUrl: 'http://localhost:5678', apiKey: process.env.N8N_API_KEY });
 
 // Read-only (default)
 const server = createMcpServer(client, 'read-only');
@@ -219,6 +227,17 @@ import { startMcpServer } from './dist/cli/mcp.js';
 ```
 
 *Executable `n8n-mcp-cli` command coming in Phase 3.*
+
+---
+
+## Troubleshooting
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| `ECONNREFUSED` | n8n not running or wrong `N8N_BASE_URL` | Verify n8n is up on port 5678; check `.env` |
+| `401 Unauthorized` | Invalid or missing `N8N_API_KEY` | Generate key in n8n UI → Settings → API; update `.env` |
+| `403 Forbidden` | API key lacks required permissions | Ensure key has workflow read/write access |
+| `Timeout` | `DEFAULT_TIMEOUT_MS` too low for large workflows | Increase timeout in `.env` (default 30000ms) |
 
 ---
 
