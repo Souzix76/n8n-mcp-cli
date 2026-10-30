@@ -1,0 +1,28 @@
+{
+  "name": "Workflow Health Check",
+  "description": "Check the health and risk level of an n8n workflow.",
+  "mode": "read-only",
+  "tools": ["get_workflow_health", "validate_workflow"],
+  "credential_mode": "read-only",
+  "output": {
+    "health_score": 92,
+    "status": "stable",
+    "risk_level": "low",
+    "categories": {
+      "reliability": "high",
+      "data_integrity": "medium",
+      "compatibility": "high",
+      "operational_risk": "low",
+      "maintainability": "high"
+    },
+    "diagnostics": {
+      "recent_failures": 0,
+      "regression_detected": false,
+      "top_risk_factors": []
+    }
+  },
+  "recommendations": [
+    "Workflow is stable for production use",
+    "Monitor data integrity on node X"
+  ]
+}

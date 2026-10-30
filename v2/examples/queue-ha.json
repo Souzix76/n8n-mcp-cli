@@ -1,0 +1,29 @@
+{
+  "name": "High-Availability Queue Monitoring",
+  "description": "Monitor n8n workflow execution health across multiple environments.",
+  "mode": "external",
+  "tools": ["validate_workflow", "get_workflow_health", "diagnose_workflow", "create_workflow"],
+  "credential_mode": "external",
+  "environment_checks": {
+    "N8N_BASE_URL": "required",
+    "N8N_API_KEY": "required for all operations"
+  },
+  "output_format": "JSON",
+  "reporting": {
+    "health_score": "0-100 per workflow",
+    "execution_trends": "hourly/daily aggregation",
+    "regression_analysis": "history comparison",
+    "error_patterns": "classified by taxonomy"
+  },
+  "workflows": {
+    "count": 0,
+    "last_health_check": null,
+    "average_health_score": 0,
+    "critical_failures": 0
+  },
+  "recommendations": [
+    "Set up scheduled health checks across all workflows",
+    "Monitor regression patterns in production",
+    "Configure alert thresholds for health score drops"
+  ]
+}

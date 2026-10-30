@@ -1,0 +1,17 @@
+{
+  "name": "CI Workflow Validation",
+  "description": "Validate workflows before production deployment in CI/CD pipelines.",
+  "mode": "read-only",
+  "tools": ["validate_workflow", "get_workflow_health", "diagnose_workflow"],
+  "credential_mode": "read-only",
+  "environment_checks": {
+    "N8N_BASE_URL": "required",
+    "N8N_API_KEY": "required for read operations"
+  },
+  "output_format": "JSON",
+  "reporting": {
+    "health_score": "0-100",
+    "risk_summary": "categorized by: logic, infrastructure, data, permission, timeout",
+    "regression_detection": "history-based"
+  }
+}

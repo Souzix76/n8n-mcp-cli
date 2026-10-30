@@ -96,7 +96,7 @@ It answers:
 
 ## Delivery order
 
-### Phase 1 — Governance and safety foundation
+### Phase 1 — Governance and safety foundation ✅ COMPLETED
 Priority goals:
 - global read-only mode
 - environment policy system
@@ -106,13 +106,17 @@ Priority goals:
 - retry and backoff
 - health check for n8n
 - config validation
+- Credential Boundary enforcement
+- CI/CD integration
 
 Acceptance criteria:
-- all operations default to read-only
-- environment-specific policy enforcement exists
-- failing calls are classified and logged clearly
-- CLI and MCP can validate without mutating
-- n8n health is checked before execution
+- all operations default to read-only ✅
+- environment-specific policy enforcement exists ✅
+- failing calls are classified and logged clearly ✅
+- CLI and MCP can validate without mutating ✅
+- n8n health is checked before execution ✅
+- Credential mode enforced per tool ✅
+- CI/CD workflows operational ✅
 
 ### Phase 2 — Validation and quality
 Priority goals:

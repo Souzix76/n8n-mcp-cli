@@ -1,7 +1,7 @@
-# n8n-workflow-tester-safe v2
+# n8n-mcp-cli v2
 
 <p align="center">
-  <img src="../assets/banner.svg" alt="n8n-workflow-tester-safe v2" width="100%"/>
+  <img src="../assets/banner.svg" alt="n8n-mcp-cli v2" width="100%"/>
 </p>
 
 <p align="center">
@@ -20,9 +20,7 @@
 
 ## Why v2?
 
-Most n8n integrations optimize for speed and access, but that often means broad admin permissions, destructive operations, and weak operational safety.
-
-This v2 takes a different approach:
+Most n8n integrations optimize for speed and access, but that often means broad admin permissions, destructive operations, and weak operational safety. This v2 takes a different approach:
 
 | Concern | v1 style approach | v2 approach |
 |---------|-------------------|------------|
@@ -33,7 +31,6 @@ This v2 takes a different approach:
 | Production readiness | Not always enforced | Policy-gated and CI-friendly |
 
 The v2 is designed to answer the questions operators, QA teams, and AI assistants actually need:
-
 - Is this workflow safe for this environment?
 - Why did it fail?
 - Where did it fail?
@@ -44,7 +41,7 @@ The v2 is designed to answer the questions operators, QA teams, and AI assistant
 
 ## Product identity
 
-`n8n-workflow-tester-safe v2` is a dedicated product line on branch `v2/production-safe-qa`.
+`n8n-mcp-cli v2` is a dedicated product line on branch `v2/production-safe-qa`.
 
 It is intentionally separate from the original v1 implementation and focuses on:
 
@@ -55,8 +52,7 @@ It is intentionally separate from the original v1 implementation and focuses on:
 - recommendations based on evidence
 - read-only governance by default
 
-This v2 is not a full admin wrapper and it is not an autonomous destructive agent.
-It is a trusted operational layer for n8n workflows.
+This v2 is not a full admin wrapper and it is not an autonomous destructive agent. It is a trusted operational layer for n8n workflows.
 
 ---
 
@@ -88,9 +84,7 @@ It is a trusted operational layer for n8n workflows.
 The v2 is composed of three layers:
 
 ### 1. Shared core
-
 The shared core holds the product logic:
-
 - security and policies
 - validation rules
 - health checks
@@ -102,25 +96,17 @@ The shared core holds the product logic:
 - reporting and evidence generation
 
 ### 2. MCP layer
-
 The MCP layer is the AI-assisted interface.
-
 It is optimized for:
-
 - natural-language workflow inspection
 - health summaries
 - execution trace interpretation
 - safe recommendations
 - contextual operational questions
 
-This layer is explicit and safe by default.
-
 ### 3. CLI layer
-
 The CLI layer is the operational interface.
-
 It is optimized for:
-
 - CI/CD validation
 - scriptable checks
 - environment validation
@@ -137,7 +123,6 @@ Interpretation happens in the context of the operating environment, not only in 
 
 ### 2. Workflow health scoring
 The v2 moves beyond pass/fail by scoring quality in categories such as:
-
 - reliability
 - data integrity
 - compatibility
@@ -146,7 +131,6 @@ The v2 moves beyond pass/fail by scoring quality in categories such as:
 
 ### 3. Operational diagnosis
 Capture enough evidence to answer:
-
 - what failed
 - where it failed
 - whether the root cause is logic, infrastructure, or data
@@ -154,16 +138,20 @@ Capture enough evidence to answer:
 
 ### 4. Recommendation engine
 Provide actionable guidance based on:
-
 - execution evidence
 - previous failures
 - environment context
 - workflow structure
 - compatibility and risk patterns
 
-### 5. Governance and reporting
-Generate output that is useful to:
+### 5. Credential Boundary
+Enforce strict separation between read-only and external modes:
+- `read-only` mode: validates workflows without mutating state
+- `external` mode: allows write operations with explicit permission
+- Structured error handling with actionable remediation
 
+### 6. Governance and reporting
+Generate output that is useful to:
 - engineers
 - QA teams
 - operators
@@ -183,7 +171,7 @@ This branch focuses on:
 - recommendation and compatibility checks
 - CLI and MCP safe operational patterns
 
-The v1 implementation remains untouched and continues as the stable baseline.
+The original v1 implementation remains untouched and continues as the stable baseline.
 
 ---
 
@@ -191,7 +179,7 @@ The v1 implementation remains untouched and continues as the stable baseline.
 
 This branch includes the initial product foundation for the v2 line:
 
-- `v2/core/` — safety, validation, retry, logging, health
+- `v2/core/` — safety, validation, retry, logging, health, errors
 - `v2/cli/` — validation and execution commands
 - `v2/mcp/` — AI-safe tool surface
 - `v2/testing/` — assertion and suite execution foundations
@@ -201,28 +189,9 @@ This branch includes the initial product foundation for the v2 line:
 
 ---
 
-## Safety posture
-
-### Included
-- workflow health checks
-- validation before execution
-- policy-aware execution flow
-- dry-run previews
-- structured logs and audit trail
-- environment-aware checks
-
-### Deliberately excluded
-- credential lifecycle management
-- secret administration
-- autonomous repair loops
-- destructive recovery actions
-- uncontrolled mutation of production workflows
-
----
-
 ## Roadmap
 
-- [ ] Phase 1 — Governance and safety foundation
+- [x] Phase 1 — Governance and safety foundation (Credential Boundary, CLI flags, MCP tools)
 - [ ] Phase 2 — Validation and suite execution
 - [ ] Phase 3 — Diagnostics and regression analysis
 - [ ] Phase 4 — Recommendation and compatibility engine
@@ -243,10 +212,3 @@ This branch includes the initial product foundation for the v2 line:
 ## License
 
 [MIT](../LICENSE)
-
----
-
-<p align="center">
-  Built for <a href="https://n8n.io">n8n</a> operators who want traceability, safety, and operational clarity without the risk surface of a broad admin wrapper.<br/>
-  Compatible with AI-assisted MCP clients and automation-focused CLI workflows.
-</p>
