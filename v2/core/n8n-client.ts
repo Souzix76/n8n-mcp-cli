@@ -8,7 +8,7 @@ export interface WorkflowSummary {
   id: string;
   name: string;
   active: boolean;
-  nodes?: string[];
+  nodes?: Array<{ name?: string; id?: string; type?: string } | string>;
   tags?: string[];
 }
 
@@ -77,29 +77,29 @@ export class N8nClient {
     const params = new URLSearchParams();
     if (cursor) params.set('cursor', cursor);
     const query = params.toString() ? `?${params.toString()}` : '';
-    return this.request<WorkflowListResponse>(`/rest/workflows${query}`);
+    return this.request<WorkflowListResponse>(`/api/v1/workflows${query}`);
   }
 
   async getWorkflow(id: string): Promise<WorkflowSummary> {
-    return this.request<WorkflowSummary>(`/rest/workflows/${id}`);
+    return this.request<WorkflowSummary>(`/api/v1/workflows/${id}`);
   }
 
   async executeWorkflow(options: ExecuteWorkflowOptions): Promise<ExecutionData> {
-    return this.request<ExecutionData>(`/rest/workflows/${options.workflowId}/run`, {
+    return this.request<ExecutionData>(`/api/v1/workflows/${options.workflowId}/execute`, {
       method: 'POST',
       body: JSON.stringify({ data: options.payload, options: options.options }),
     });
   }
 
   async getExecution(id: string): Promise<ExecutionData> {
-    return this.request<ExecutionData>(`/rest/executions/${id}`);
+    return this.request<ExecutionData>(`/api/v1/executions/${id}`);
   }
 
   async getExecutions(workflowId?: string, limit = 50): Promise<{ data: ExecutionData[] }> {
     const params = new URLSearchParams();
     if (workflowId) params.set('workflowId', workflowId);
     params.set('limit', String(limit));
-    return this.request<{ data: ExecutionData[] }>(`/rest/executions?${params.toString()}`);
+    return this.request<{ data: ExecutionData[] }>(`/api/v1/executions?${params.toString()}`);
   }
 
   async healthCheck(): Promise<{ status: string }> {

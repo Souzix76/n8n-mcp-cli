@@ -29,7 +29,7 @@ export class TraceAnalyzer {
   }
 
   private extractNodes(workflow: WorkflowSummary, execution: ExecutionData): TraceNode[] {
-    const nodeNames = workflow.nodes ?? [];
+    const nodeNames = (workflow.nodes ?? []).map((n: { name?: string } | string) => typeof n === 'string' ? n : (n.name ?? 'unknown'));
     const runData = execution.data?.resultData?.runData as Record<string, Array<{ data?: { main?: Array<{ json?: unknown }> } }>> | undefined;
 
     // Pre-calculate all durations to normalize them
