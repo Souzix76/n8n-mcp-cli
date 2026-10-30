@@ -1,7 +1,7 @@
 # n8n-mcp-cli
 
 <p align="center">
-  <img src="v2/assets/banner.svg" alt="n8n-mcp-cli" width="100%"/>
+  <img src="assets/banner.svg" alt="n8n-mcp-cli" width="100%"/>
 </p>
 
 <p align="center">
@@ -68,17 +68,17 @@ DEFAULT_TIMEOUT_MS=30000
 
 ```bash
 # Modo read-only (padrão)
-node dist/v2/mcp/server.js
+node dist/mcp/server.js
 
 # Ou programaticamente com modo de credencial:
 # const server = createMcpServer(client, 'read-only'); // ou 'external'
 ```
 
-**Como CLI** — *A camada CLI no v2 é module-only (ainda sem entry point executável). Importar funções diretamente:*
+**Como CLI** — *A camada CLI é module-only (ainda sem entry point executável). Importar funções diretamente:*
 
 ```js
-import { validateV2Project } from './dist/v2/cli/validate.js';
-import { generateV2Report, generateV2ReportCi } from './dist/v2/cli/report.js';
+import { validateV2Project } from './dist/cli/validate.js';
+import { generateV2Report, generateV2ReportCi } from './dist/cli/report.js';
 // etc.
 ```
 
@@ -96,7 +96,7 @@ import { generateV2Report, generateV2ReportCi } from './dist/v2/cli/report.js';
     "n8n-mcp-cli": {
       "type": "stdio",
       "command": "node",
-      "args": ["/path/to/n8n-mcp-cli/dist/v2/mcp/server.js"],
+      "args": ["/path/to/n8n-mcp-cli/dist/mcp/server.js"],
       "env": {
         "N8N_BASE_URL": "http://localhost:5678",
         "N8N_API_KEY": "your_api_key"
@@ -125,8 +125,8 @@ O servidor MCP impõe uma fronteira estrita de credenciais via a factory `create
 
 ```js
 // Uso programático:
-import { createMcpServer } from './dist/v2/mcp/server.js';
-import { N8nClient } from './dist/v2/core/n8n-client.js';
+import { createMcpServer } from './dist/mcp/server.js';
+import { N8nClient } from './dist/core/n8n-client.js';
 
 const client = new N8nClient({ baseUrl: 'http://localhost:5678', apiKey: '...' });
 
@@ -207,15 +207,15 @@ Dados de Execução → Análise de Trace → Classificação de Falha → Detec
 
 ## CLI (Module-Only)
 
-*CLI executável ainda não disponível — camada CLI v2 é module-only. Usar servidor MCP ou importar funções diretamente.*
+*CLI executável ainda não disponível — camada CLI é module-only. Usar servidor MCP ou importar funções diretamente.*
 
 ```js
-// Módulos disponíveis em dist/v2/cli/
-import { validateV2Project } from './dist/v2/cli/validate.js';
-import { runV2Suite } from './dist/v2/cli/run.js';
-import { generateV2Report, generateV2ReportCi } from './dist/v2/cli/report.js';
-import { registryGenerate, registryValidate } from './dist/v2/cli/registry.js';
-import { startMcpServer } from './dist/v2/cli/mcp.js';
+// Módulos disponíveis em dist/cli/
+import { validateV2Project } from './dist/cli/validate.js';
+import { runV2Suite } from './dist/cli/run.js';
+import { generateV2Report, generateV2ReportCi } from './dist/cli/report.js';
+import { registryGenerate, registryValidate } from './dist/cli/registry.js';
+import { startMcpServer } from './dist/cli/mcp.js';
 ```
 
 *Comando executável `n8n-mcp-cli` a chegar na Fase 3.*
@@ -225,7 +225,6 @@ import { startMcpServer } from './dist/v2/cli/mcp.js';
 ## Arquitetura
 
 ```
-v2/
 ├── cli/              # Camada CLI — CI/CD, checks scriptáveis, reports
 ├── core/             # Core partilhado — segurança, validação, saúde, retry, erros
 ├── diagnostics/      # Trace analysis, classificação de falha, regressão
@@ -252,7 +251,7 @@ v2/
 
 ## Exemplos de Config
 
-O diretório `v2/examples/` inclui workflows prontos a usar:
+O diretório `examples/` inclui workflows prontos a usar:
 
 | Ficheiro | Descrição |
 |----------|-----------|
@@ -313,4 +312,4 @@ O diretório `v2/examples/` inclui workflows prontos a usar:
 
 Desenvolvido para operadores [n8n](https://n8n.io/) que querem validação e diagnósticos sem a superfície de risco.
 
-Compatível com [Claude](https://claude.ai/), [OpenClaw](https://openclaw.org/), e qualquer cliente MCP.
+Compatível com [Hermes Agent](https://hermes-agent.nousresearch.com/), [Claude/Codex](https://claude.ai/), e qualquer cliente MCP.
