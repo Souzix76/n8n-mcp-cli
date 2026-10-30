@@ -1,5 +1,7 @@
+# n8n-mcp-cli
+
 <p align="center">
-  <img src="assets/banner.svg" alt="n8n-workflow-tester-safe" width="100%"/>
+  <img src="assets/banner.svg" alt="n8n-mcp-cli" width="100%"/>
 </p>
 
 <p align="center">
@@ -10,13 +12,9 @@
 </p>
 
 <p align="center">
-  <strong>Safe MCP server + CLI for testing, scoring, and inspecting n8n workflows</strong><br/>
-  <em>Config-driven test suites with tiered scoring, execution traces, and a built-in node catalog.</em>
+  <strong>Production-safe QA and workflow health platform for n8n</strong><br/>
+  <em>Governed validation, diagnostics, and operational readiness for workflow automation.</em>
 </p>
-
-<a href="https://glama.ai/mcp/servers/Souzix76/n8n-workflow-tester-safe">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/Souzix76/n8n-workflow-tester-safe/badge" alt="n8n-workflow-tester-safe MCP server" />
-</a>
 
 ---
 
@@ -24,18 +22,20 @@
 
 Most n8n MCP integrations give you **full admin access** — credentials, destructive operations, auto-fix loops. That's fine for development, but risky for CI, shared environments, or autonomous agents.
 
-`n8n-workflow-tester-safe` takes a different approach:
+`n8n-mcp-cli` takes a different approach:
 
 | Feature | This MCP | Full admin MCPs |
 |---------|----------|-----------------|
-| Test workflows with scoring | Yes | No |
-| Execution traces (lightweight) | Yes | No |
-| Node catalog with suggestions | Yes | No |
-| Credential management | **Excluded** | Yes |
-| Secret lifecycle | **Excluded** | Yes |
-| Auto-fix loops | **Excluded** | Some |
+| Workflow validation & health scoring | ✅ Yes | ❌ No |
+| Execution trace analysis (timing, errors, regression) | ✅ Yes | ❌ No |
+| Failure classification (logic/infra/data/permission/timeout) | ✅ Yes | ❌ No |
+| Node suggestions for tasks | ✅ Yes | ❌ No |
+| n8n version + health check | ✅ Yes | ❌ No |
+| **Credential management** | ❌ Excluded | ✅ Yes |
+| **Secret lifecycle** | ❌ Excluded | ✅ Yes |
+| **Destructive auto-repair loops** | ❌ Excluded | ✅ Some |
 
-**Result:** A focused tool that does testing and inspection really well, without the risk surface of a full admin wrapper.
+**Result:** A focused operational layer that does validation, diagnostics, and health assessment really well, without the risk surface of a full admin wrapper.
 
 ---
 
@@ -44,15 +44,15 @@ Most n8n MCP integrations give you **full admin access** — credentials, destru
 ### 1. Install
 
 ```bash
-git clone https://github.com/souzix76/n8n-workflow-tester-safe.git
-cd n8n-workflow-tester-safe
+git clone https://github.com/Souzix76/n8n-mcp-cli.git
+cd n8n-mcp-cli
 npm install && npm run build
 ```
 
 ### 2. Configure
 
 ```bash
-cp .env.example .env
+cp .env.example .env  # Create from template
 # Edit .env with your n8n URL and API key
 ```
 
@@ -64,31 +64,39 @@ DEFAULT_TIMEOUT_MS=30000
 
 ### 3. Run
 
-**As MCP server** (for Claude, OpenClaw, or any MCP client):
+**As MCP server** (for Hermes Agent, Claude/Codex, or any MCP client):
 
 ```bash
-node dist/index.js
+# Read-only mode (default)
+node dist/mcp/server.js
+
+# Or programmatically with credential mode:
+# const server = createMcpServer(client, 'read-only'); // or 'external'
 ```
 
-**As CLI** (for scripts and CI):
+**As CLI** — *CLI layer is module-only (no executable entry point yet). Import functions directly:*
 
-```bash
-node dist/cli.js --config ./workflows/example.json
+```js
+import { validateV2Project } from './dist/cli/validate.js';
+import { generateV2Report, generateV2ReportCi } from './dist/cli/report.js';
+// etc.
 ```
+
+*CLI executable coming in Phase 3.*
 
 ---
 
 ## MCP Client Configuration
 
-### Claude Code (`~/.claude.json`)
+### Hermes Agent / Claude Code (`~/.claude.json`)
 
 ```json
 {
   "mcpServers": {
-    "n8n-workflow-tester": {
+    "n8n-mcp-cli": {
       "type": "stdio",
       "command": "node",
-      "args": ["/path/to/n8n-workflow-tester-safe/dist/index.js"],
+      "args": ["/path/to/n8n-mcp-cli/dist/mcp/server.js"],
       "env": {
         "N8N_BASE_URL": "http://localhost:5678",
         "N8N_API_KEY": "your_api_key"
@@ -98,7 +106,7 @@ node dist/cli.js --config ./workflows/example.json
 }
 ```
 
-### OpenClaw / Any MCP client
+### Codex / Any MCP client
 
 The server uses **stdio transport** — compatible with any MCP client that supports stdio.
 
@@ -106,85 +114,72 @@ The server uses **stdio transport** — compatible with any MCP client that supp
 
 ## How It Works
 
-### Test Config
+### Credential Boundary (Read-Only by Default)
 
-Define your tests in a JSON file:
+The MCP server enforces a strict credential boundary via the `createMcpServer` factory:
 
-```json
-{
-  "workflowId": "abc123",
-  "workflowName": "my-webhook-handler",
-  "triggerMode": "webhook",
-  "webhookPath": "/webhook/my-handler",
-  "timeoutMs": 15000,
-  "qualityThreshold": 85,
-  "testPayloads": [
-    {
-      "name": "happy-path",
-      "data": { "message": "Hello", "userId": "user_001" }
-    },
-    {
-      "name": "empty-input",
-      "data": { "message": "" }
-    },
-    {
-      "name": "large-payload",
-      "data": { "items": ["a","b","c","d","e","f","g","h","i","j"] }
-    }
-  ],
-  "tier3Checks": [
-    {
-      "name": "has-response",
-      "field": "output",
-      "check": "not_empty",
-      "severity": "error"
-    },
-    {
-      "name": "response-length",
-      "field": "output.message",
-      "check": "min_length",
-      "value": 5,
-      "severity": "warning",
-      "message": "Response too short"
-    }
-  ]
-}
+| Mode | Allowed Tools | Use Case |
+|------|---------------|----------|
+| **read-only** (default) | `validate_workflow`, `get_workflow_health`, `get_n8n_version`, `suggest_nodes`, `diagnose_workflow` | Safe inspection, validation, diagnostics |
+| **external** | All read-only + `create_workflow` | Write operations requiring credentials |
+
+```js
+// Programmatic usage:
+import { createMcpServer } from './dist/mcp/server.js';
+import { N8nClient } from './dist/core/n8n-client.js';
+
+const client = new N8nClient({ baseUrl: 'http://localhost:5678', apiKey: '...' });
+
+// Read-only (default)
+const server = createMcpServer(client, 'read-only');
+
+// External mode (write operations)
+const server = createMcpServer(client, 'external');
 ```
 
-### Scoring System
+**Error handling:** `CredentialBoundaryError` provides actionable remediation messages when a tool is called in an incompatible mode.
 
-Every test run produces a **two-tier score**:
+---
+
+### Diagnostic Pipeline
+
+The `diagnose_workflow` tool runs a three-stage diagnostic pipeline:
 
 ```
-Final Score = (Tier 1 x 70%) + (Tier 3 x 30%)
+Execution Data → Trace Analysis → Failure Classification → Regression Detection
 ```
 
-| Tier | Weight | What it checks |
-|------|--------|----------------|
-| **Tier 1** (Infrastructure) | 70% | HTTP success, timeout compliance, non-empty output |
-| **Tier 3** (Quality) | 30% | Custom field checks: contains, equals, min/max length, not_empty |
-
-A test **passes** when:
-- Tier 1 score = 100 (all infrastructure checks pass)
-- Final score >= quality threshold (default 85)
-- No issues with severity `error`
+**Trace Analysis** — Per-node timing, errors, item counts, and data flow
+**Failure Classification** — Taxonomy: logic | infrastructure | data | permission | timeout
+**Regression Detection** — Recurrence patterns across historical runs
 
 ### Example Output
 
 ```json
 {
-  "passed": true,
-  "score": 93,
-  "tier1Score": 100,
-  "tier3Score": 80,
-  "issues": [
-    {
-      "tier": "tier3",
-      "severity": "warning",
-      "check": "response-length",
-      "message": "Response too short"
-    }
-  ]
+  "workflowId": "1hO3EGpPD5es3pi7",
+  "trace": {
+    "nodes": 20,
+    "totalDurationMs": 3450,
+    "nodeTimings": [
+      {"name": "HTTP Request", "durationMs": 1200, "status": "success"},
+      {"name": "IF", "durationMs": 45, "status": "success"}
+    ],
+    "errors": []
+  },
+  "classification": {
+    "failures": [
+      {"node": "HTTP Request", "type": "infrastructure", "severity": "warning", "message": "Timeout risk detected"}
+    ]
+  },
+  "regression": {
+    "recurringFailures": 2,
+    "patterns": ["timeout:webhook", "permission:credential"]
+  },
+  "health": {
+    "score": 92,
+    "status": "stable"
+  }
 }
 ```
 
@@ -192,96 +187,94 @@ A test **passes** when:
 
 ## Tools Reference
 
-### Testing (3 tools)
+### Diagnostics & Validation (5 tools)
 
-| Tool | Description |
-|------|-------------|
-| `test_workflow` | Run a single payload test from a config file |
-| `evaluate_workflow_result` | Run a test and return evaluation score + issues |
-| `run_workflow_suite` | Run all payloads in a config, return per-payload scores |
+| Tool | Description | Modes |
+|------|-------------|-------|
+| `validate_workflow` | Validate a workflow and return risk/health summary without mutating anything | read-only, external |
+| `get_workflow_health` | Return a workflow health score and risk summary | read-only, external |
+| `get_n8n_version` | Get n8n server version + health check (notes API limitation) | read-only, external |
+| `suggest_nodes` | Suggest compatible nodes based on a task description | read-only, external |
+| `diagnose_workflow` | Comprehensive diagnostics: trace analysis, failure classification, regression detection | read-only, external |
 
-### Workflow Operations (5 tools)
+### Write Operations (1 tool)
 
-| Tool | Description |
-|------|-------------|
-| `create_workflow` | Create a new workflow from JSON |
-| `update_workflow` | Replace an existing workflow by ID |
-| `delete_workflow` | Delete a workflow by ID |
-| `add_node_to_workflow` | Append a node to an existing workflow |
-| `connect_nodes` | Create a connection between two nodes |
-
-### Introspection (5 tools)
-
-| Tool | Description |
-|------|-------------|
-| `get_workflow_summary` | Compact summary: node count, names, types, disabled status |
-| `list_node_types` | List all available node types from the n8n instance |
-| `get_node_type` | Full schema/metadata for a specific node type |
-| `list_executions` | Recent executions, filterable by workflow and status |
-| `get_execution` | Full execution data by ID |
-| `get_execution_trace` | **Lightweight per-node trace** — timing, errors, item counts |
-
-### Catalog (5 tools)
-
-| Tool | Description |
-|------|-------------|
-| `get_catalog_stats` | Node/trigger/credential counts from imported catalog |
-| `search_nodes` | Fuzzy search by name, optional trigger-only filter |
-| `list_triggers` | All trigger nodes from the catalog |
-| `validate_node_type` | Check if a node type exists, get close matches |
-| `suggest_nodes_for_task` | Natural-language task in, relevant nodes out |
+| Tool | Description | Modes |
+|------|-------------|-------|
+| `create_workflow` | Create a new workflow (placeholder, requires external mode) | external |
 
 ---
 
-## Example Configs
+## CLI (Module-Only)
 
-The `workflows/` directory includes ready-to-use test configs:
+*CLI executable not yet available — CLI layer is module-only. Use MCP server or import functions directly.*
 
-| File | Trigger Mode | Payloads | Description |
-|------|-------------|----------|-------------|
-| `example.json` | webhook | 2 | Basic webhook echo test |
-| `telegram-bot.json` | webhook | 3 | Telegram bot command handler |
-| `api-pipeline.json` | execute | 3 | Multi-step API data pipeline |
+```js
+// Available modules in dist/cli/
+import { validateV2Project } from './dist/cli/validate.js';
+import { runV2Suite } from './dist/cli/run.js';
+import { generateV2Report, generateV2ReportCi } from './dist/cli/report.js';
+import { registryGenerate, registryValidate } from './dist/cli/registry.js';
+import { startMcpServer } from './dist/cli/mcp.js';
+```
+
+*Executable `n8n-mcp-cli` command coming in Phase 3.*
 
 ---
 
 ## Architecture
 
 ```
-src/
-  index.ts        MCP server (stdio) + tool registration
-  cli.ts          CLI runner for config-driven tests
-  n8n-client.ts   REST client for n8n API v1
-  evaluator.ts    Two-tier scoring engine
-  catalog.ts      Node catalog parser + fuzzy search
-  config.ts       JSON config reader + Zod validation
-  types.ts        TypeScript interfaces
-
-catalog/          Imported n8n node catalog (436 nodes, 389 credentials)
-workflows/        Example test suite configs
+├── cli/              # CLI layer — CI/CD, scriptable checks, reports
+├── core/             # Shared core — safety, validation, health, retry, errors
+├── diagnostics/      # Trace analysis, failure classification, regression
+├── mcp/              # MCP layer — AI-safe tool surface, credential boundary
+├── recommendations/  # Health scoring, compatibility checks
+├── reports/          # JSON, Markdown, HTML, JUnit reports
+├── registry/         # MCP registry manifest
+├── testing/          # Assertion and suite execution foundations
+└── examples/         # CI validation, health check examples
 ```
 
-### Design Constraints
+### Design Principles
 
-- **stdio-only transport** — no HTTP server, no auth to manage
-- **Explicit tool surface** — 19 tools, each with a clear purpose
-- **Small dependency footprint** — only `@modelcontextprotocol/sdk` and `zod`
-- **No credential lifecycle** — won't read, create, or delete credentials
-- **No agentic auto-repair** — reports issues, doesn't auto-fix them
+- **Read-only by default** — Safe inspection without mutation
+- **Dry-run for mutation paths** — Validate before write
+- **Explicit credential boundary** — `read-only` vs `external` modes
+- **Structured diagnostics over raw logs** — Evidence-based traces
+- **Environment-aware validation** — Context matters
+- **Production safety over feature volume** — Trusted operational layer
+- **No credential lifecycle management** — Won't read, create, or delete credentials
+- **No destructive auto-repair loops** — Reports issues, doesn't auto-fix
+
+---
+
+## Example Configs
+
+The `examples/` directory includes ready-to-use workflows:
+
+| File | Description |
+|------|-------------|
+| `ci-validation.json` | CI validation workflow example |
+| `health-check.json` | Health check workflow example (read-only mode) |
 
 ---
 
 ## Safety Posture
 
 ### Included
-- Workflow test execution (webhook + API)
-- Output evaluation with tiered scoring
-- Workflow CRUD (create, read, update, delete)
-- Graph editing (add nodes, connect)
-- Execution inspection and tracing
-- Node catalog lookup and validation
+
+- Workflow validation and health scoring
+- Execution trace analysis (timing, errors, data flow)
+- Failure classification with taxonomy
+- Regression detection across historical runs
+- Node suggestions for tasks
+- n8n version + health check
+- MCP registry manifest generation/validation
+- Multi-format reporting (JSON, Markdown, HTML, JUnit)
 
 ### Deliberately Excluded
+
 - Credentials management
 - Secrets lifecycle
 - Destructive restore flows
@@ -292,12 +285,12 @@ workflows/        Example test suite configs
 
 ## Roadmap
 
-- [ ] Read-only mode flag (disable all mutation tools)
-- [ ] Workflow diff summaries (before/after comparison)
-- [ ] Reusable evaluation presets for common patterns
-- [ ] Richer trace visualization
-- [ ] Fixture libraries for test payloads
-- [ ] npm package for `npx` usage
+- [x] Phase 1 — Governance and safety foundation (Credential Boundary, CLI flags, MCP tools)
+- [x] Phase 2 — n8n API integration (real `/api/v1/` endpoints, SQLite API key extraction)
+- [ ] Phase 3 — Validation and suite execution
+- [ ] Phase 4 — Diagnostics and regression analysis
+- [ ] Phase 5 — Recommendation and compatibility engine
+- [ ] Phase 6 — Reporting and operational maturity
 
 ---
 
@@ -317,8 +310,6 @@ workflows/        Example test suite configs
 
 ---
 
-<p align="center">
-  Originally created by James (<a href="https://openclaw.org">OpenClaw</a>). Enhanced and maintained by <a href="https://github.com/Souzix76">Souzix76</a>.<br/>
-  Built for <a href="https://n8n.io">n8n</a> operators who want testing without the risk surface.<br/>
-  Compatible with <a href="https://claude.ai">Claude</a>, <a href="https://openclaw.org">OpenClaw</a>, and any MCP client.
-</p>
+Built for [n8n](https://n8n.io/) operators who want validation and diagnostics without the risk surface.
+
+Compatible with [Hermes Agent](https://hermes-agent.nousresearch.com/), [Claude/Codex](https://claude.ai/), and any MCP client.
