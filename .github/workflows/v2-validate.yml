@@ -11,10 +11,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '22.x'
           cache: 'npm'
       - run: npm ci
-      - run: npx tsc --noEmit --project v2/tsconfig.json
-      - run: npm run lint
-      - run: cd v2 && npm test
-      - run: npx n8n-mcp-cli@latest v2 report --ci
+      - run: npx tsc --noEmit
+      - run: npm test

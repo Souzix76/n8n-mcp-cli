@@ -64,7 +64,7 @@ DEFAULT_TIMEOUT_MS=30000
 
 ### 3. Executar
 
-**Como servidor MCP** (para Claude, OpenClaw, ou qualquer cliente MCP):
+**Como servidor MCP** (para Hermes Agent, Claude/Codex, ou qualquer cliente MCP):
 
 ```bash
 # Modo read-only (padrão)
@@ -88,7 +88,7 @@ import { generateV2Report, generateV2ReportCi } from './dist/v2/cli/report.js';
 
 ## Configuração de Cliente MCP
 
-### Claude Code (`~/.claude.json`)
+### Hermes Agent / Claude Code (`~/.claude.json`)
 
 ```json
 {
@@ -106,7 +106,7 @@ import { generateV2Report, generateV2ReportCi } from './dist/v2/cli/report.js';
 }
 ```
 
-### OpenClaw / Qualquer cliente MCP
+### Codex / Qualquer cliente MCP
 
 O servidor usa **stdio transport** — compatível com qualquer cliente MCP que suporte stdio.
 

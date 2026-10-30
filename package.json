@@ -3,6 +3,10 @@
   "version": "2.1.9",
   "type": "module",
   "private": true,
+  "scripts": {
+    "build": "npx tsc",
+    "test": "vitest run"
+  },
   "dependencies": {
     "zod": "3.25.76"
   },
