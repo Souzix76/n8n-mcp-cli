@@ -6,7 +6,11 @@ import { dirname, join } from 'node:path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-describe('MCP Server stdio Integration', () => {
+// Skip integration tests in CI (no real n8n available)
+const isCI = process.env.CI === 'true';
+const describeOrSkip = isCI ? describe.skip : describe;
+
+describeOrSkip('MCP Server stdio Integration', () => {
   let serverProcess: ChildProcess;
   let requestId = 0;
 
