@@ -1,0 +1,9 @@
+- main [ref=e32]:
+  - generic [ref=e33]:
+    - generic [ref=e34]: FreeLLMAPI
+    - generic [ref=e37]:
+      - heading "Forgot password?" [level=1] [ref=e38]
+      - generic [ref=e39]:
+        - paragraph [ref=e40]: Click the button below to generate a reset code. The code is written to the server log, never emailed. Enter it here to set a new password.
+        - button "Send reset code" [ref=e41]
+      - button "Back to sign in" [ref=e42]

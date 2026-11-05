@@ -1,0 +1,20 @@
+- main [ref=e32]:
+  - generic [ref=e33]:
+    - generic [ref=e34]: FreeLLMAPI
+    - generic [ref=e37]:
+      - heading "Forgot password?" [level=1] [ref=e38]
+      - generic [ref=e43]:
+        - paragraph [ref=e44]: The code is in the server log. It is never sent by email.
+        - paragraph [ref=e45]: "Running in Docker? The code is in the container log: docker logs <container>."
+        - generic [ref=e46]:
+          - generic [ref=e47]: Reset code
+          - textbox "Reset code" [ref=e48]:
+            - /placeholder: code from the server logs
+        - generic [ref=e49]:
+          - generic [ref=e50]: New password
+          - generic [ref=e51]:
+            - textbox "New password" [ref=e52]:
+              - /placeholder: at least 8 characters
+            - button "Show password" [ref=e53]
+        - button "Reset password" [ref=e57]
+      - button "Back to sign in" [ref=e42]

@@ -1,0 +1,152 @@
+- generic [ref=e58]:
+  - banner [ref=e59]:
+    - generic [ref=e60]:
+      - link "FreeLLMAPI" [ref=e61] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e64]:
+        - generic [ref=e65]:
+          - link "Models" [ref=e66] [cursor=pointer]:
+            - /url: /models
+          - button "Browse model types" [ref=e67]
+        - link "Playground" [ref=e70] [cursor=pointer]:
+          - /url: /playground
+        - link "Keys" [ref=e71] [cursor=pointer]:
+          - /url: /keys
+        - link "Agents" [ref=e72] [cursor=pointer]:
+          - /url: /agents
+        - generic [ref=e73]:
+          - link "Analytics" [ref=e74] [cursor=pointer]:
+            - /url: /analytics
+          - button "Analytics pages" [ref=e75]
+        - link "Premium" [ref=e78] [cursor=pointer]:
+          - /url: /premium
+      - generic [ref=e79]:
+        - button "Command palette" [ref=e80]:
+          - generic [ref=e81]: Ctrl K
+        - button "Open navigation menu" [ref=e82]
+  - main [ref=e83]:
+    - generic [ref=e2196]:
+      - generic [ref=e2197]:
+        - generic [ref=e2198]:
+          - heading "Keys" [level=1] [ref=e2199]
+          - paragraph [ref=e2200]: Provider credentials and the unified API key your apps connect with.
+        - generic [ref=e2201]:
+          - button "Export" [ref=e2203]
+          - tablist "Keys" [ref=e2205]:
+            - tab "Providers" [ref=e2206]
+            - tab "Quota signals" [ref=e2207]
+            - tab "Unified API key" [active] [selected] [ref=e2208]
+            - tab "Anthropic" [ref=e2209]
+            - tab "Agents" [ref=e2210]
+      - generic [ref=e2211]:
+        - generic [ref=e2377]:
+          - generic [ref=e2378]:
+            - generic [ref=e2379]:
+              - heading "Your unified API key" [level=2] [ref=e2380]
+              - paragraph [ref=e2381]:
+                - text: Use this as your OpenAI
+                - code [ref=e2382]: api_key
+                - text: ; it authenticates requests to this proxy.
+            - button "Regenerate" [ref=e2383]
+          - generic [ref=e2384]:
+            - code [ref=e2385]: freellmapi-c9••••••••••••••••••••••••••••••••
+            - button "Show" [ref=e2386]
+            - button "Copy" [ref=e2387]
+          - generic [ref=e2388]:
+            - generic [ref=e2389]: Base URL
+            - code [ref=e2390]: http://localhost:3001/v1
+            - generic [ref=e2391]: Chat
+            - code [ref=e2392]: /v1/chat/completions
+            - generic [ref=e2393]: Responses
+            - code [ref=e2394]: /v1/responses
+            - generic [ref=e2395]: Messages
+            - code [ref=e2396]:
+              - text: /v1/messages
+              - generic [ref=e2397]: (Anthropic-compatible (Claude))
+            - generic [ref=e2398]: Embeddings
+            - code [ref=e2399]:
+              - text: /v1/embeddings
+              - generic [ref=e2400]: "(model: \"auto\" or a family from the Embeddings tab)"
+          - group [ref=e2401]:
+            - generic "Quick start" [ref=e2402] [cursor=pointer]
+        - button [ref=e2404]:
+          - generic [ref=e2407]:
+            - heading "Client profiles" [level=2] [ref=e2408]
+            - paragraph [ref=e2409]: Per-client API keys, each with a system prompt the server always applies.
+        - generic [ref=e2410]:
+          - generic [ref=e2411]:
+            - generic [ref=e2412]:
+              - heading "Outbound proxy" [level=2] [ref=e2413]
+              - paragraph [ref=e2417]: Route outbound LLM requests through a proxy. Supports SOCKS5, HTTP, and HTTPS.
+            - generic [ref=e2418]:
+              - switch [checked] [ref=e2419]
+              - checkbox [checked] [aria-hidden] [ref=e2420]
+          - generic [ref=e2421]:
+            - generic [ref=e2422]:
+              - generic [ref=e2423]: Mode
+              - combobox [ref=e2424]:
+                - generic [ref=e2425]: forward
+                - img [aria-hidden]: ▼
+              - textbox [aria-hidden] [ref=e2426]: forward
+            - generic [ref=e2427]:
+              - generic [ref=e2428]: Proxy URL
+              - textbox "socks5://127.0.0.1:1080" [ref=e2429]
+            - button "Test" [ref=e2430]
+            - button "Save" [ref=e2431]
+          - generic [ref=e2432]:
+            - generic [ref=e2433]:
+              - paragraph [ref=e2434]: Route via proxy
+              - generic [ref=e2435]:
+                - button "Disable all" [ref=e2436]
+                - button "Enable all" [disabled]
+            - generic [ref=e2437]:
+              - generic [ref=e2438]:
+                - switch "Google AI Studio" [checked] [ref=e2439]
+                - checkbox [checked] [aria-hidden] [ref=e2440]
+                - generic [ref=e2441]: Google AI Studio
+              - generic [ref=e2442]:
+                - switch "ElectronHub (shared weekly credits)" [checked] [ref=e2443]
+                - checkbox [checked] [aria-hidden] [ref=e2444]
+                - generic [ref=e2445]: ElectronHub (shared weekly credits)
+              - generic [ref=e2446]:
+                - switch "NVIDIA NIM" [checked] [ref=e2447]
+                - checkbox [checked] [aria-hidden] [ref=e2448]
+                - generic [ref=e2449]: NVIDIA NIM
+              - generic [ref=e2450]:
+                - switch "OpenRouter" [checked] [ref=e2451]
+                - checkbox [checked] [aria-hidden] [ref=e2452]
+                - generic [ref=e2453]: OpenRouter
+              - generic [ref=e2454]:
+                - switch "Cloudflare Workers AI" [checked] [ref=e2455]
+                - checkbox [checked] [aria-hidden] [ref=e2456]
+                - generic [ref=e2457]: Cloudflare Workers AI
+              - generic [ref=e2458]:
+                - switch "Zhipu AI (Z.ai)" [checked] [ref=e2459]
+                - checkbox [checked] [aria-hidden] [ref=e2460]
+                - generic [ref=e2461]: Zhipu AI (Z.ai)
+              - generic [ref=e2462]:
+                - switch "OpenCode Zen (paid models only)" [checked] [ref=e2463]
+                - checkbox [checked] [aria-hidden] [ref=e2464]
+                - generic [ref=e2465]: OpenCode Zen (paid models only)
+              - generic [ref=e2466]:
+                - switch "AI Horde (no key needed, slow)" [checked] [ref=e2467]
+                - checkbox [checked] [aria-hidden] [ref=e2468]
+                - generic [ref=e2469]: AI Horde (no key needed, slow)
+          - generic [ref=e2470]:
+            - paragraph [ref=e2471]:
+              - text: Also configurable via the
+              - code [ref=e2472]: PROXY_URL
+              - text: "environment variable (takes precedence). Leave blank to disable. Examples:"
+            - list [ref=e2473]:
+              - listitem [ref=e2474]:
+                - code [ref=e2475]: socks5://127.0.0.1:1080
+              - listitem [ref=e2476]:
+                - code [ref=e2477]: socks5h://127.0.0.1:1080
+              - listitem [ref=e2478]:
+                - code [ref=e2479]: http://proxy.corp.com:8080
+              - listitem [ref=e2480]:
+                - code [ref=e2481]: socks5://user:pass@proxy:1080
+        - button [ref=e2483]:
+          - generic [ref=e2484]:
+            - heading "Backups" [level=2] [ref=e2485]
+            - paragraph [ref=e2489]: Save the routing data to a .sql file beside the database, and restore it later.

@@ -20,7 +20,9 @@ describe('MCP Server Credential Boundary', () => {
   });
 
   it('allows validate_workflow in read-only mode', async () => {
-    const result = await server.callTool('validate_workflow', { workflowId: 'wf-1' });
+    const mcpResult = await server.callTool('validate_workflow', { workflowId: 'wf-1' });
+    // Result is in MCP format: {content: [{type: 'text', text: JSON.stringify(actualResult)}]}
+    const result = JSON.parse(mcpResult.content[0].text);
     expect(result).toEqual({
       workflowId: 'wf-1',
       status: 'safe-check',
@@ -29,7 +31,9 @@ describe('MCP Server Credential Boundary', () => {
   });
 
   it('allows get_workflow_health in read-only mode', async () => {
-    const result = await server.callTool('get_workflow_health', { workflowId: 'wf-1' });
+    const mcpResult = await server.callTool('get_workflow_health', { workflowId: 'wf-1' });
+    // Result is in MCP format: {content: [{type: 'text', text: JSON.stringify(actualResult)}]}
+    const result = JSON.parse(mcpResult.content[0].text);
     expect(result).toEqual({
       workflowId: 'wf-1',
       health: 'stable',
@@ -38,7 +42,9 @@ describe('MCP Server Credential Boundary', () => {
   });
 
   it('allows suggest_nodes in read-only mode', async () => {
-    const result = await server.callTool('suggest_nodes', { task: 'test task' });
+    const mcpResult = await server.callTool('suggest_nodes', { task: 'test task' });
+    // Result is in MCP format: {content: [{type: 'text', text: JSON.stringify(actualResult)}]}
+    const result = JSON.parse(mcpResult.content[0].text);
     expect(result).toEqual({
       task: 'test task',
       suggestions: ['HTTP Request', 'Set', 'IF'],
@@ -54,7 +60,9 @@ describe('MCP Server Credential Boundary', () => {
     });
     mockClient.getExecutions = vi.fn().mockResolvedValue({ data: [{ id: 'exec-1' }] });
 
-    const result = await server.callTool('diagnose_workflow', { workflowId: 'wf-1' });
+    const mcpResult = await server.callTool('diagnose_workflow', { workflowId: 'wf-1' });
+    // Result is in MCP format: {content: [{type: 'text', text: JSON.stringify(actualResult)}]}
+    const result = JSON.parse(mcpResult.content[0].text);
     expect(result).toBeDefined();
     expect(result.workflowId).toBe('wf-1');
   });
@@ -85,7 +93,9 @@ describe('MCP Server Credential Boundary', () => {
     
     // Write tool should work in external mode
     const result = await externalServer.callTool('create_workflow', { name: 'Test' });
-    expect(result).toEqual({
+    // Result is in MCP format: {content: [{type: 'text', text: JSON.stringify(actualResult)}]}
+    const parsed = JSON.parse(result.content[0].text);
+    expect(parsed).toEqual({
       name: 'Test',
       status: 'created',
       message: 'Workflow creation not yet implemented - placeholder for external mode',
@@ -100,7 +110,9 @@ describe('MCP Server Credential Boundary', () => {
     
     // Now create_workflow should work
     const result = await server.callTool('create_workflow', { name: 'Test' });
-    expect(result.status).toBe('created');
+    // Result is in MCP format: {content: [{type: 'text', text: JSON.stringify(actualResult)}]}
+    const parsed = JSON.parse(result.content[0].text);
+    expect(parsed.status).toBe('created');
   });
 
   it('throws for unknown tool', async () => {

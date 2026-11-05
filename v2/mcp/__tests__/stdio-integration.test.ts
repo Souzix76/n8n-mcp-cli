@@ -96,10 +96,12 @@ describe('MCP Server stdio Integration', () => {
   });
 
   it('should call validate_workflow in read-only mode', async () => {
-    const result = await sendRequest('tools/call', {
+    const mcpResult = await sendRequest('tools/call', {
       name: 'validate_workflow',
       arguments: { workflowId: 'test-wf' },
     });
+    // Result is in MCP format: {content: [{type: 'text', text: JSON.stringify(actualResult)}]}
+    const result = JSON.parse(mcpResult.content[0].text) as { workflowId: string; status: string };
     expect(result).toBeDefined();
     expect(result.workflowId).toBe('test-wf');
     expect(result.status).toBe('safe-check');
@@ -113,10 +115,12 @@ describe('MCP Server stdio Integration', () => {
   });
 
   it('should call get_n8n_version', async () => {
-    const result = await sendRequest('tools/call', {
+    const mcpResult = await sendRequest('tools/call', {
       name: 'get_n8n_version',
       arguments: {},
     });
+    // Result is in MCP format: {content: [{type: 'text', text: JSON.stringify(actualResult)}]}
+    const result = JSON.parse(mcpResult.content[0].text) as { version: string };
     expect(result).toBeDefined();
     expect(result.version).toBeDefined();
   });

@@ -1,0 +1,1315 @@
+- generic [ref=e58]:
+  - banner [ref=e59]:
+    - generic [ref=e60]:
+      - link "FreeLLMAPI" [ref=e61] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e64]:
+        - generic [ref=e65]:
+          - link "Models" [ref=e66] [cursor=pointer]:
+            - /url: /models
+          - button "Browse model types" [ref=e67]
+        - link "Playground" [ref=e70] [cursor=pointer]:
+          - /url: /playground
+        - link "Keys" [ref=e71] [cursor=pointer]:
+          - /url: /keys
+        - link "Agents" [ref=e72] [cursor=pointer]:
+          - /url: /agents
+        - generic [ref=e73]:
+          - link "Analytics" [ref=e74] [cursor=pointer]:
+            - /url: /analytics
+          - button "Analytics pages" [ref=e75]
+        - link "Premium" [ref=e78] [cursor=pointer]:
+          - /url: /premium
+      - generic [ref=e79]:
+        - button "Command palette" [ref=e80]:
+          - generic [ref=e81]: Ctrl K
+        - button "Open navigation menu" [ref=e82]
+  - main [ref=e83]:
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - heading "Models" [level=1] [ref=e87]
+          - paragraph [ref=e88]: Pick a routing strategy. In Manual mode you drag to set the order; the other strategies route by live score across reliability, speed and intelligence.
+        - generic [ref=e90]:
+          - link "Chat models" [ref=e91] [cursor=pointer]:
+            - /url: /models/chat
+          - link "Image" [ref=e92] [cursor=pointer]:
+            - /url: /models/image
+          - link "Video" [ref=e93] [cursor=pointer]:
+            - /url: /models/video
+          - link "Audio" [ref=e94] [cursor=pointer]:
+            - /url: /models/audio
+          - link "Embeddings" [ref=e95] [cursor=pointer]:
+            - /url: /models/embeddings
+          - link "Decision" [ref=e96] [cursor=pointer]:
+            - /url: /models/decision
+          - link "Search" [ref=e97] [cursor=pointer]:
+            - /url: /models/search
+          - link "Fusion" [ref=e98] [cursor=pointer]:
+            - /url: /models/fusion
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]:
+              - heading "Getting started" [level=2] [ref=e103]
+              - paragraph [ref=e104]: Three steps to route your first request.
+            - generic [ref=e105]:
+              - generic [ref=e106]: 1 of 3
+              - button "Dismiss" [ref=e107]
+          - list [ref=e111]:
+            - listitem [ref=e112]:
+              - paragraph [ref=e117]: Add a provider key
+            - listitem [ref=e118]:
+              - generic [ref=e119]: "2"
+              - generic [ref=e120]:
+                - paragraph [ref=e121]: Send a test request
+                - paragraph [ref=e122]: Pick any model in the Playground and say hello.
+              - link [ref=e124] [cursor=pointer]:
+                - /url: /playground
+                - button "Open Playground" [ref=e125]
+            - listitem [ref=e126]:
+              - generic [ref=e127]: "3"
+              - generic [ref=e128]:
+                - paragraph [ref=e129]: Connect your app
+                - paragraph [ref=e130]: Use your unified API key with any OpenAI-compatible client.
+              - generic [ref=e132]:
+                - button "Copy API key" [ref=e133]
+                - button "Copy base URL" [ref=e134]
+        - generic [ref=e135]:
+          - generic [ref=e136]:
+            - heading "Monthly token budget" [level=2] [ref=e137]
+            - generic [ref=e138]: 601.0M remaining·100% of 601.0M
+          - generic [ref=e139]:
+            - 'generic "Gemma 4 26B-A4B it (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e140]'
+            - 'generic "GLM-4.7 Flash (CF) (cloudflare): 45.0M remaining, 0 used" [ref=e141]'
+            - 'generic "Nemotron 3 120B (CF) (cloudflare): 10.0M remaining, 0 used" [ref=e142]'
+            - 'generic "GPT-OSS 120B (CF) (cloudflare): 45.0M remaining, 0 used" [ref=e143]'
+            - 'generic "North Mini Code (free) (openrouter): 6.0M remaining, 0 used" [ref=e144]'
+            - 'generic "QwQ 32B (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e145]'
+            - 'generic "GPT-OSS 20B (CF) (cloudflare): 45.0M remaining, 0 used" [ref=e146]'
+            - 'generic "DeepSeek R1 Distill Qwen 32B (CF) (cloudflare): 5.0M remaining, 0 used" [ref=e147]'
+            - 'generic "Llama 3.3 70B fp8-fast (CF) (cloudflare): 45.0M remaining, 0 used" [ref=e148]'
+            - 'generic "Llama 4 Scout (CF) (cloudflare): 45.0M remaining, 0 used" [ref=e149]'
+            - 'generic "Qwen3 30B-A3B fp8 (CF) (cloudflare): 45.0M remaining, 0 used" [ref=e150]'
+            - 'generic "Llama 3.1 8B (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e151]'
+            - 'generic "Mistral Small 3.1 24B (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e152]'
+            - 'generic "Qwen2.5 Coder 32B (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e153]'
+            - 'generic "Llama 3.2 3B (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e154]'
+            - 'generic "Gemma SEA-LION v4 27B (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e155]'
+            - 'generic "Llama 3.2 11B Vision (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e156]'
+            - 'generic "Llama 3.2 1B Instruct (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e157]'
+            - 'generic "Granite 4.0 H Micro (CF) (cloudflare): 10.0M remaining, 0 used" [ref=e158]'
+            - 'generic "Llama 2 7B Chat LoRA (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e159]'
+            - 'generic "Mistral 7B Instruct v0.2 LoRA (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e160]'
+            - 'generic "Llama Guard 3 8B (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e161]'
+            - 'generic "Moondream 3.1 9B A2B (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e162]'
+            - 'generic "Gemma 2B IT LoRA (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e163]'
+            - 'generic "Gemma 7B IT LoRA (CF) (cloudflare): 20.0M remaining, 0 used" [ref=e164]'
+          - generic [ref=e166]:
+            - generic [ref=e167]:
+              - generic [ref=e169]: Gemma 4 26B-A4B it (CF)
+              - generic "Remaining / monthly budget for Gemma 4 26B-A4B it (CF) (cloudflare)" [ref=e170]: 20.0M/20.0M
+            - generic [ref=e171]:
+              - generic [ref=e173]: GLM-4.7 Flash (CF)
+              - generic "Remaining / monthly budget for GLM-4.7 Flash (CF) (cloudflare)" [ref=e174]: 45.0M/45.0M
+            - generic [ref=e175]:
+              - generic [ref=e177]: Nemotron 3 120B (CF)
+              - generic "Remaining / monthly budget for Nemotron 3 120B (CF) (cloudflare)" [ref=e178]: 10.0M/10.0M
+            - generic [ref=e179]:
+              - generic [ref=e181]: GPT-OSS 120B (CF)
+              - generic "Remaining / monthly budget for GPT-OSS 120B (CF) (cloudflare)" [ref=e182]: 45.0M/45.0M
+            - generic [ref=e183]:
+              - generic [ref=e185]: North Mini Code (free)
+              - generic "Remaining / monthly budget for North Mini Code (free) (openrouter)" [ref=e186]: 6.0M/6.0M
+            - generic [ref=e187]:
+              - generic [ref=e189]: QwQ 32B (CF)
+              - generic "Remaining / monthly budget for QwQ 32B (CF) (cloudflare)" [ref=e190]: 20.0M/20.0M
+            - generic [ref=e191]:
+              - generic [ref=e193]: GPT-OSS 20B (CF)
+              - generic "Remaining / monthly budget for GPT-OSS 20B (CF) (cloudflare)" [ref=e194]: 45.0M/45.0M
+            - generic [ref=e195]:
+              - generic [ref=e197]: DeepSeek R1 Distill Qwen 32B (CF)
+              - generic "Remaining / monthly budget for DeepSeek R1 Distill Qwen 32B (CF) (cloudflare)" [ref=e198]: 5.0M/5.0M
+            - generic [ref=e199]:
+              - generic [ref=e201]: Llama 3.3 70B fp8-fast (CF)
+              - generic "Remaining / monthly budget for Llama 3.3 70B fp8-fast (CF) (cloudflare)" [ref=e202]: 45.0M/45.0M
+            - generic [ref=e203]:
+              - generic [ref=e205]: Llama 4 Scout (CF)
+              - generic "Remaining / monthly budget for Llama 4 Scout (CF) (cloudflare)" [ref=e206]: 45.0M/45.0M
+            - generic [ref=e207]:
+              - generic [ref=e209]: Qwen3 30B-A3B fp8 (CF)
+              - generic "Remaining / monthly budget for Qwen3 30B-A3B fp8 (CF) (cloudflare)" [ref=e210]: 45.0M/45.0M
+            - generic [ref=e211]:
+              - generic [ref=e213]: Llama 3.1 8B (CF)
+              - generic "Remaining / monthly budget for Llama 3.1 8B (CF) (cloudflare)" [ref=e214]: 20.0M/20.0M
+            - generic [ref=e215]:
+              - generic [ref=e217]: Mistral Small 3.1 24B (CF)
+              - generic "Remaining / monthly budget for Mistral Small 3.1 24B (CF) (cloudflare)" [ref=e218]: 20.0M/20.0M
+            - generic [ref=e219]:
+              - generic [ref=e221]: Qwen2.5 Coder 32B (CF)
+              - generic "Remaining / monthly budget for Qwen2.5 Coder 32B (CF) (cloudflare)" [ref=e222]: 20.0M/20.0M
+            - generic [ref=e223]:
+              - generic [ref=e225]: Llama 3.2 3B (CF)
+              - generic "Remaining / monthly budget for Llama 3.2 3B (CF) (cloudflare)" [ref=e226]: 20.0M/20.0M
+            - generic [ref=e227]:
+              - generic [ref=e229]: Gemma SEA-LION v4 27B (CF)
+              - generic "Remaining / monthly budget for Gemma SEA-LION v4 27B (CF) (cloudflare)" [ref=e230]: 20.0M/20.0M
+            - generic [ref=e231]:
+              - generic [ref=e233]: Llama 3.2 11B Vision (CF)
+              - generic "Remaining / monthly budget for Llama 3.2 11B Vision (CF) (cloudflare)" [ref=e234]: 20.0M/20.0M
+            - generic [ref=e235]:
+              - generic [ref=e237]: Llama 3.2 1B Instruct (CF)
+              - generic "Remaining / monthly budget for Llama 3.2 1B Instruct (CF) (cloudflare)" [ref=e238]: 20.0M/20.0M
+            - generic [ref=e239]:
+              - generic [ref=e241]: Granite 4.0 H Micro (CF)
+              - generic "Remaining / monthly budget for Granite 4.0 H Micro (CF) (cloudflare)" [ref=e242]: 10.0M/10.0M
+            - generic [ref=e243]:
+              - generic [ref=e245]: Llama 2 7B Chat LoRA (CF)
+              - generic "Remaining / monthly budget for Llama 2 7B Chat LoRA (CF) (cloudflare)" [ref=e246]: 20.0M/20.0M
+            - generic [ref=e247]:
+              - generic [ref=e249]: Mistral 7B Instruct v0.2 LoRA (CF)
+              - generic "Remaining / monthly budget for Mistral 7B Instruct v0.2 LoRA (CF) (cloudflare)" [ref=e250]: 20.0M/20.0M
+            - generic [ref=e251]:
+              - generic [ref=e253]: Llama Guard 3 8B (CF)
+              - generic "Remaining / monthly budget for Llama Guard 3 8B (CF) (cloudflare)" [ref=e254]: 20.0M/20.0M
+            - generic [ref=e255]:
+              - generic [ref=e257]: Moondream 3.1 9B A2B (CF)
+              - generic "Remaining / monthly budget for Moondream 3.1 9B A2B (CF) (cloudflare)" [ref=e258]: 20.0M/20.0M
+            - generic [ref=e259]:
+              - generic [ref=e261]: Gemma 2B IT LoRA (CF)
+              - generic "Remaining / monthly budget for Gemma 2B IT LoRA (CF) (cloudflare)" [ref=e262]: 20.0M/20.0M
+            - generic [ref=e263]:
+              - generic [ref=e265]: Gemma 7B IT LoRA (CF)
+              - generic "Remaining / monthly budget for Gemma 7B IT LoRA (CF) (cloudflare)" [ref=e266]: 20.0M/20.0M
+          - paragraph [ref=e267]: +118 with no published quota
+          - button "Show all 25 models" [ref=e268]
+        - generic [ref=e271]:
+          - generic [ref=e272]:
+            - heading "Routing strategy" [level=2] [ref=e273]
+            - generic [ref=e274]: reliability 50% · speed 25% · intelligence 25%
+          - generic [ref=e275]:
+            - generic [ref=e276]:
+              - button "Manual" [ref=e278]
+              - button "Balanced" [ref=e280]
+              - button "Smartest" [ref=e282]
+              - button "Fastest" [ref=e284]
+              - button "Most reliable" [ref=e286]
+              - button "Custom" [ref=e288]
+              - button "Decision" [ref=e290]
+            - button "More options" [ref=e291]
+          - paragraph [ref=e294]: Scores update from live traffic. The order below is how requests are routed right now.
+        - button "Show" [ref=e296]:
+          - generic [ref=e302]:
+            - heading "Fallback chains" [level=2] [ref=e303]
+            - paragraph [ref=e304]: Named chains, each callable as auto:<name> in /v1/models.
+          - generic [ref=e305]: 1 chains
+        - generic [ref=e309]:
+          - textbox "Search models or providers…" [ref=e311]
+          - generic [ref=e312]:
+            - button "Vision" [ref=e313]
+            - button "Tools" [ref=e314]
+            - group "Context window" [ref=e315]:
+              - button "Any context" [ref=e316]
+              - button "32K+" [ref=e317]
+              - button "128K+" [ref=e318]
+              - button "1M+" [ref=e319]
+            - group "Enable or disable every shown model" [ref=e320]:
+              - button "Enable all" [disabled] [ref=e322]
+              - button "Disable all" [ref=e324]
+        - paragraph [ref=e325]: 131 of 131 shown models are in the chain
+        - table [ref=e327]:
+          - rowgroup [ref=e328]:
+            - row [ref=e329]:
+              - columnheader [ref=e330]
+              - columnheader "#" [ref=e331]
+              - columnheader "Model" [ref=e332]
+              - columnheader "Reliability" [ref=e333]
+              - columnheader "Speed" [ref=e336]
+              - columnheader "Intelligence" [ref=e339]
+              - columnheader "Guardrails" [ref=e342]
+              - columnheader "Score" [ref=e345]
+              - columnheader "On" [ref=e348]
+          - rowgroup [ref=e349]:
+            - row [ref=e350] [cursor=pointer]:
+              - cell "·" [ref=e351]
+              - cell "1" [ref=e352]
+              - cell [ref=e353]:
+                - generic [ref=e354]:
+                  - link "View providers" [ref=e355]:
+                    - /url: /models/chat/qwen3.8-flash
+                    - generic [ref=e356]: Qwen3.8 Flash
+                    - generic [ref=e357]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e358]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e359]: 1M ctx
+                    - generic "Accepts image input" [ref=e360]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e361]: Tools
+                  - button "Copy model id" [ref=e363]
+              - cell "no data" [ref=e367]
+              - cell "no data" [ref=e372]
+              - cell "99" [ref=e377]
+              - cell "—" [ref=e382]
+              - cell "0.648" [ref=e383]
+              - cell [ref=e384]:
+                - switch [checked] [ref=e385]
+                - checkbox [checked] [aria-hidden] [ref=e386]
+            - row [ref=e387] [cursor=pointer]:
+              - cell "·" [ref=e388]
+              - cell "2" [ref=e389]
+              - cell [ref=e390]:
+                - generic [ref=e391]:
+                  - link "View providers" [ref=e392]:
+                    - /url: /models/chat/gpt-5.6-luna
+                    - generic [ref=e393]: GPT-5.6 Luna
+                    - generic [ref=e394]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e395]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e396]: 1M ctx
+                    - generic "Accepts image input" [ref=e397]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e398]: Tools
+                  - button "Copy model id" [ref=e400]
+              - cell "no data" [ref=e404]
+              - cell "no data" [ref=e409]
+              - cell "99" [ref=e414]
+              - cell "—" [ref=e419]
+              - cell "0.647" [ref=e420]
+              - cell [ref=e421]:
+                - switch [checked] [ref=e422]
+                - checkbox [checked] [aria-hidden] [ref=e423]
+            - row [ref=e424] [cursor=pointer]:
+              - cell "·" [ref=e425]
+              - cell "3" [ref=e426]
+              - cell [ref=e427]:
+                - generic [ref=e428]:
+                  - link "View providers" [ref=e429]:
+                    - /url: /models/chat/dots3-note-preview
+                    - generic [ref=e430]: Dots3 Note Preview
+                    - generic [ref=e431]: openrouter
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e432]: 20 RPM
+                    - generic "Context window" [ref=e433]: 512K ctx
+                    - generic "Accepts image input" [ref=e434]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e435]: Tools
+                  - button "Copy model id" [ref=e437]
+              - cell "no data" [ref=e441]
+              - cell "no data" [ref=e446]
+              - cell "99" [ref=e451]
+              - cell "—" [ref=e456]
+              - cell "0.647" [ref=e457]
+              - cell [ref=e458]:
+                - switch [checked] [ref=e459]
+                - checkbox [checked] [aria-hidden] [ref=e460]
+            - row [ref=e461] [cursor=pointer]:
+              - cell "·" [ref=e462]
+              - cell "4" [ref=e463]
+              - cell [ref=e464]:
+                - generic [ref=e465]:
+                  - link "View providers" [ref=e466]:
+                    - /url: /models/chat/qwen-3.8-27b
+                    - generic [ref=e467]: Qwen 3.8 27B
+                    - generic [ref=e468]: cloudflare
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e469]: shared 10k neurons/day
+                    - generic "Context window" [ref=e470]: 262K ctx
+                    - generic "Accepts image input" [ref=e471]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e472]: Tools
+                  - button "Copy model id" [ref=e474]
+              - cell "no data" [ref=e478]
+              - cell "no data" [ref=e483]
+              - cell "98" [ref=e488]
+              - cell "—" [ref=e493]
+              - cell "0.646" [ref=e494]
+              - cell [ref=e495]:
+                - switch [checked] [ref=e496]
+                - checkbox [checked] [aria-hidden] [ref=e497]
+            - row [ref=e498] [cursor=pointer]:
+              - cell "·" [ref=e499]
+              - cell "5" [ref=e500]
+              - cell [ref=e501]:
+                - generic [ref=e502]:
+                  - link "View providers" [ref=e503]:
+                    - /url: /models/chat/qwen3.8-27b
+                    - generic [ref=e504]: Qwen3.8 27B
+                    - generic [ref=e505]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e506]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e507]: 262K ctx
+                    - generic "Accepts image input" [ref=e508]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e509]: Tools
+                  - button "Copy model id" [ref=e511]
+              - cell "no data" [ref=e515]
+              - cell "no data" [ref=e520]
+              - cell "98" [ref=e525]
+              - cell "—" [ref=e530]
+              - cell "0.646" [ref=e531]
+              - cell [ref=e532]:
+                - switch [checked] [ref=e533]
+                - checkbox [checked] [aria-hidden] [ref=e534]
+            - row [ref=e535] [cursor=pointer]:
+              - cell "·" [ref=e536]
+              - cell "6" [ref=e537]
+              - cell [ref=e538]:
+                - generic [ref=e539]:
+                  - link "View providers" [ref=e540]:
+                    - /url: /models/chat/minimax-m3
+                    - generic [ref=e541]: MiniMax M3
+                    - generic [ref=e542]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e543]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e544]: 1M ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e545]: Tools
+                  - button "Copy model id" [ref=e547]
+              - cell "no data" [ref=e551]
+              - cell "no data" [ref=e556]
+              - cell "75" [ref=e561]
+              - cell "—" [ref=e566]
+              - cell "0.587" [ref=e567]
+              - cell [ref=e568]:
+                - switch [checked] [ref=e569]
+                - checkbox [checked] [aria-hidden] [ref=e570]
+            - row [ref=e571] [cursor=pointer]:
+              - cell "·" [ref=e572]
+              - cell "7" [ref=e573]
+              - cell [ref=e574]:
+                - generic [ref=e575]:
+                  - link "View providers" [ref=e576]:
+                    - /url: /models/chat/laguna-s-2.1
+                    - generic [ref=e577]: Laguna S 2.1
+                    - generic [ref=e578]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e579]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e580]: 262K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e581]: Tools
+                  - button "Copy model id" [ref=e583]
+              - cell "no data" [ref=e587]
+              - cell "no data" [ref=e592]
+              - cell "74" [ref=e597]
+              - cell "—" [ref=e602]
+              - cell "0.586" [ref=e603]
+              - cell [ref=e604]:
+                - switch [checked] [ref=e605]
+                - checkbox [checked] [aria-hidden] [ref=e606]
+            - row [ref=e607] [cursor=pointer]:
+              - cell "·" [ref=e608]
+              - cell "8" [ref=e609]
+              - cell [ref=e610]:
+                - generic [ref=e611]:
+                  - link "View providers" [ref=e612]:
+                    - /url: /models/chat/deepseek-v4-flash
+                    - generic [ref=e613]: DeepSeek V4 Flash
+                    - generic [ref=e614]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e615]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e616]: 1M ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e617]: Tools
+                  - button "Copy model id" [ref=e619]
+              - cell "no data" [ref=e623]
+              - cell "no data" [ref=e628]
+              - cell "74" [ref=e633]
+              - cell "—" [ref=e638]
+              - cell "0.586" [ref=e639]
+              - cell [ref=e640]:
+                - switch [checked] [ref=e641]
+                - checkbox [checked] [aria-hidden] [ref=e642]
+            - row [ref=e643] [cursor=pointer]:
+              - cell "·" [ref=e644]
+              - cell "9" [ref=e645]
+              - cell [ref=e646]:
+                - generic [ref=e647]:
+                  - link "View providers" [ref=e648]:
+                    - /url: /models/chat/deepseek-v4-flash-thinking
+                    - generic [ref=e649]: DeepSeek V4 Flash Thinking
+                    - generic [ref=e650]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e651]: $0.25/week shared recurring credit
+                  - button "Copy model id" [ref=e653]
+              - cell "no data" [ref=e657]
+              - cell "no data" [ref=e662]
+              - cell "74" [ref=e667]
+              - cell "—" [ref=e672]
+              - cell "0.586" [ref=e673]
+              - cell [ref=e674]:
+                - switch [checked] [ref=e675]
+                - checkbox [checked] [aria-hidden] [ref=e676]
+            - row [ref=e677] [cursor=pointer]:
+              - cell "·" [ref=e678]
+              - cell "10" [ref=e679]
+              - cell [ref=e680]:
+                - generic [ref=e681]:
+                  - link "View providers" [ref=e682]:
+                    - /url: /models/chat/gpt-5.4-mini
+                    - generic [ref=e683]: GPT 5.4 Mini
+                    - generic [ref=e684]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e685]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e686]: 400K ctx
+                    - generic "Accepts image input" [ref=e687]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e688]: Tools
+                  - button "Copy model id" [ref=e690]
+              - cell "no data" [ref=e694]
+              - cell "no data" [ref=e699]
+              - cell "74" [ref=e704]
+              - cell "—" [ref=e709]
+              - cell "0.586" [ref=e710]
+              - cell [ref=e711]:
+                - switch [checked] [ref=e712]
+                - checkbox [checked] [aria-hidden] [ref=e713]
+            - row [ref=e714] [cursor=pointer]:
+              - cell "·" [ref=e715]
+              - cell "11" [ref=e716]
+              - cell [ref=e717]:
+                - generic [ref=e718]:
+                  - link "View providers" [ref=e719]:
+                    - /url: /models/chat/minimax-m2.5
+                    - generic [ref=e720]: MiniMax M2.5
+                    - generic [ref=e721]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e722]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e723]: 200K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e724]: Tools
+                  - button "Copy model id" [ref=e726]
+              - cell "no data" [ref=e730]
+              - cell "no data" [ref=e735]
+              - cell "74" [ref=e740]
+              - cell "—" [ref=e745]
+              - cell "0.585" [ref=e746]
+              - cell [ref=e747]:
+                - switch [checked] [ref=e748]
+                - checkbox [checked] [aria-hidden] [ref=e749]
+            - row [ref=e750] [cursor=pointer]:
+              - cell "·" [ref=e751]
+              - cell "12" [ref=e752]
+              - cell [ref=e753]:
+                - generic [ref=e754]:
+                  - link "View providers" [ref=e755]:
+                    - /url: /models/chat/minimax-m2.7
+                    - generic [ref=e756]: MiniMax M2.7
+                    - generic [ref=e757]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e758]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e759]: 200K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e760]: Tools
+                  - button "Copy model id" [ref=e762]
+              - cell "no data" [ref=e766]
+              - cell "no data" [ref=e771]
+              - cell "74" [ref=e776]
+              - cell "—" [ref=e781]
+              - cell "0.585" [ref=e782]
+              - cell [ref=e783]:
+                - switch [checked] [ref=e784]
+                - checkbox [checked] [aria-hidden] [ref=e785]
+            - row [ref=e786] [cursor=pointer]:
+              - cell "·" [ref=e787]
+              - cell "13" [ref=e788]
+              - cell [ref=e789]:
+                - generic [ref=e790]:
+                  - link "View providers" [ref=e791]:
+                    - /url: /models/chat/nemotron-3-ultra
+                    - generic [ref=e792]: Nemotron 3 Ultra
+                    - generic [ref=e793]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e794]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e795]: 1M ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e796]: Tools
+                  - button "Copy model id" [ref=e798]
+              - cell "no data" [ref=e802]
+              - cell "no data" [ref=e807]
+              - cell "74" [ref=e812]
+              - cell "—" [ref=e817]
+              - cell "0.585" [ref=e818]
+              - cell [ref=e819]:
+                - switch [checked] [ref=e820]
+                - checkbox [checked] [aria-hidden] [ref=e821]
+            - row [ref=e822] [cursor=pointer]:
+              - cell "·" [ref=e823]
+              - cell "14" [ref=e824]
+              - cell [ref=e825]:
+                - generic [ref=e826]:
+                  - link "View providers" [ref=e827]:
+                    - /url: /models/chat/nemotron-3-ultra-550b
+                    - generic [ref=e828]: Nemotron 3 Ultra 550B
+                    - generic [ref=e829]: nvidia
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e830]: 40 RPM
+                    - generic "Context window" [ref=e831]: 1M ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e832]: Tools
+                  - button "Copy model id" [ref=e834]
+              - cell "no data" [ref=e838]
+              - cell "no data" [ref=e843]
+              - cell "74" [ref=e848]
+              - cell "—" [ref=e853]
+              - cell "0.585" [ref=e854]
+              - cell [ref=e855]:
+                - switch [checked] [ref=e856]
+                - checkbox [checked] [aria-hidden] [ref=e857]
+            - row [ref=e858] [cursor=pointer]:
+              - cell "·" [ref=e859]
+              - cell "15" [ref=e860]
+              - cell [ref=e861]:
+                - generic [ref=e862]:
+                  - link "View providers" [ref=e863]:
+                    - /url: /models/chat/gemini-3.5-flash-lite
+                    - generic [ref=e864]: Gemini 3.5 Flash Lite
+                    - generic [ref=e865]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e866]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e867]: 1M ctx
+                    - generic "Accepts image input" [ref=e868]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e869]: Tools
+                  - button "Copy model id" [ref=e871]
+              - cell "no data" [ref=e875]
+              - cell "no data" [ref=e880]
+              - cell "74" [ref=e885]
+              - cell "—" [ref=e890]
+              - cell "0.585" [ref=e891]
+              - cell [ref=e892]:
+                - switch [checked] [ref=e893]
+                - checkbox [checked] [aria-hidden] [ref=e894]
+            - row [ref=e895] [cursor=pointer]:
+              - cell "·" [ref=e896]
+              - cell "16" [ref=e897]
+              - cell [ref=e898]:
+                - generic [ref=e899]:
+                  - link "View providers" [ref=e900]:
+                    - /url: /models/chat/gpt-5.4-nano
+                    - generic [ref=e901]: GPT 5.4 Nano
+                    - generic [ref=e902]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e903]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e904]: 400K ctx
+                    - generic "Accepts image input" [ref=e905]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e906]: Tools
+                  - button "Copy model id" [ref=e908]
+              - cell "no data" [ref=e912]
+              - cell "no data" [ref=e917]
+              - cell "74" [ref=e922]
+              - cell "—" [ref=e927]
+              - cell "0.585" [ref=e928]
+              - cell [ref=e929]:
+                - switch [checked] [ref=e930]
+                - checkbox [checked] [aria-hidden] [ref=e931]
+            - row [ref=e932] [cursor=pointer]:
+              - cell "·" [ref=e933]
+              - cell "17" [ref=e934]
+              - cell [ref=e935]:
+                - generic [ref=e936]:
+                  - link "View providers" [ref=e937]:
+                    - /url: /models/chat/muse-glimmer-30b
+                    - generic [ref=e938]: Muse Glimmer 30B
+                    - generic [ref=e939]: nvidia
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e940]: 40 RPM
+                    - generic "Context window" [ref=e941]: 131K ctx
+                    - generic "Accepts image input" [ref=e942]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e943]: Tools
+                  - button "Copy model id" [ref=e945]
+              - cell "no data" [ref=e949]
+              - cell "no data" [ref=e954]
+              - cell "74" [ref=e959]
+              - cell "—" [ref=e964]
+              - cell "0.585" [ref=e965]
+              - cell [ref=e966]:
+                - switch [checked] [ref=e967]
+                - checkbox [checked] [aria-hidden] [ref=e968]
+            - row [ref=e969] [cursor=pointer]:
+              - cell "·" [ref=e970]
+              - cell "18" [ref=e971]
+              - cell [ref=e972]:
+                - generic [ref=e973]:
+                  - link "View providers" [ref=e974]:
+                    - /url: /models/chat/step-3.7-flash
+                    - generic [ref=e975]: Step 3.7 Flash
+                    - generic [ref=e976]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e977]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e978]: 256K ctx
+                    - generic "Accepts image input" [ref=e979]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e980]: Tools
+                  - button "Copy model id" [ref=e982]
+              - cell "no data" [ref=e986]
+              - cell "no data" [ref=e991]
+              - cell "74" [ref=e996]
+              - cell "—" [ref=e1001]
+              - cell "0.585" [ref=e1002]
+              - cell [ref=e1003]:
+                - switch [checked] [ref=e1004]
+                - checkbox [checked] [aria-hidden] [ref=e1005]
+            - row [ref=e1006] [cursor=pointer]:
+              - cell "·" [ref=e1007]
+              - cell "19" [ref=e1008]
+              - cell [ref=e1009]:
+                - generic [ref=e1010]:
+                  - link "View providers" [ref=e1011]:
+                    - /url: /models/chat/gemma-4-31b
+                    - generic [ref=e1012]: Gemma 4 31B
+                    - generic [ref=e1013]: 2 providers
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1015]: 20 RPM
+                    - generic "Context window" [ref=e1016]: 262K ctx
+                    - generic "Accepts image input" [ref=e1017]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1018]: Tools
+                  - button "Copy model id" [ref=e1020]
+              - cell "no data" [ref=e1024]
+              - cell "no data" [ref=e1029]
+              - cell "74" [ref=e1034]
+              - cell "—" [ref=e1039]
+              - cell "0.585 best of 2" [ref=e1040]:
+                - generic [ref=e1042]:
+                  - generic [ref=e1043]: "0.585"
+                  - generic [ref=e1044]: best of 2
+              - cell [ref=e1045]:
+                - switch [checked] [ref=e1046]
+                - checkbox [checked] [aria-hidden] [ref=e1047]
+            - row [ref=e1048] [cursor=pointer]:
+              - cell "·" [ref=e1049]
+              - cell "20" [ref=e1050]
+              - cell [ref=e1051]:
+                - generic [ref=e1052]:
+                  - link "View providers" [ref=e1053]:
+                    - /url: /models/chat/qwen3.7-flash
+                    - generic [ref=e1054]: Qwen3.7 Flash
+                    - generic [ref=e1055]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1056]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1057]: 1M ctx
+                    - generic "Accepts image input" [ref=e1058]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1059]: Tools
+                  - button "Copy model id" [ref=e1061]
+              - cell "no data" [ref=e1065]
+              - cell "no data" [ref=e1070]
+              - cell "74" [ref=e1075]
+              - cell "—" [ref=e1080]
+              - cell "0.585" [ref=e1081]
+              - cell [ref=e1082]:
+                - switch [checked] [ref=e1083]
+                - checkbox [checked] [aria-hidden] [ref=e1084]
+            - row [ref=e1085] [cursor=pointer]:
+              - cell "·" [ref=e1086]
+              - cell "21" [ref=e1087]
+              - cell [ref=e1088]:
+                - generic [ref=e1089]:
+                  - link "View providers" [ref=e1090]:
+                    - /url: /models/chat/gemma-4-26b-a4b
+                    - generic [ref=e1091]: Gemma 4 26B-A4B
+                    - generic [ref=e1092]: 2 providers
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1094]: 20 RPM
+                    - generic "Context window" [ref=e1095]: 262K ctx
+                    - generic "Accepts image input" [ref=e1096]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1097]: Tools
+                  - button "Copy model id" [ref=e1099]
+              - cell "no data" [ref=e1103]
+              - cell "no data" [ref=e1108]
+              - cell "74" [ref=e1113]
+              - cell "—" [ref=e1118]
+              - cell "0.584 best of 2" [ref=e1119]:
+                - generic [ref=e1121]:
+                  - generic [ref=e1122]: "0.584"
+                  - generic [ref=e1123]: best of 2
+              - cell [ref=e1124]:
+                - switch [checked] [ref=e1125]
+                - checkbox [checked] [aria-hidden] [ref=e1126]
+            - row [ref=e1127] [cursor=pointer]:
+              - cell "·" [ref=e1128]
+              - cell "22" [ref=e1129]
+              - cell [ref=e1130]:
+                - generic [ref=e1131]:
+                  - link "View providers" [ref=e1132]:
+                    - /url: /models/chat/gemma-4-26b-a4b-it
+                    - generic [ref=e1133]: Gemma 4 26B-A4B it
+                    - generic [ref=e1134]: cloudflare
+                    - generic "Total free tokens per month across this model's providers" [ref=e1135]: 20.0M/mo
+                    - generic "Context window" [ref=e1136]: 262K ctx
+                  - button "Copy model id" [ref=e1138]
+              - cell "no data" [ref=e1142]
+              - cell "no data" [ref=e1147]
+              - cell "74" [ref=e1152]
+              - cell "—" [ref=e1157]
+              - cell "0.584" [ref=e1158]
+              - cell [ref=e1159]:
+                - switch [checked] [ref=e1160]
+                - checkbox [checked] [aria-hidden] [ref=e1161]
+            - row [ref=e1162] [cursor=pointer]:
+              - cell "·" [ref=e1163]
+              - cell "23" [ref=e1164]
+              - cell [ref=e1165]:
+                - generic [ref=e1166]:
+                  - link "View providers" [ref=e1167]:
+                    - /url: /models/chat/gemma-4-31b-heretic
+                    - generic [ref=e1168]: Gemma 4 31B Heretic
+                    - generic [ref=e1169]: aihorde
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1170]: Kudos queue (no token cap)
+                    - generic "Context window" [ref=e1171]: 4K ctx
+                  - button "Copy model id" [ref=e1173]
+              - cell "no data" [ref=e1177]
+              - cell "no data" [ref=e1182]
+              - cell "74" [ref=e1187]
+              - cell "—" [ref=e1192]
+              - cell "0.584" [ref=e1193]
+              - cell [ref=e1194]:
+                - switch [checked] [ref=e1195]
+                - checkbox [checked] [aria-hidden] [ref=e1196]
+            - row [ref=e1197] [cursor=pointer]:
+              - cell "·" [ref=e1198]
+              - cell "24" [ref=e1199]
+              - cell [ref=e1200]:
+                - generic [ref=e1201]:
+                  - link "View providers" [ref=e1202]:
+                    - /url: /models/chat/gpt-5-mini
+                    - generic [ref=e1203]: GPT 5 Mini
+                    - generic [ref=e1204]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1205]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1206]: 400K ctx
+                    - generic "Accepts image input" [ref=e1207]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1208]: Tools
+                  - button "Copy model id" [ref=e1210]
+              - cell "no data" [ref=e1214]
+              - cell "no data" [ref=e1219]
+              - cell "74" [ref=e1224]
+              - cell "—" [ref=e1229]
+              - cell "0.584" [ref=e1230]
+              - cell [ref=e1231]:
+                - switch [checked] [ref=e1232]
+                - checkbox [checked] [aria-hidden] [ref=e1233]
+            - row [ref=e1234] [cursor=pointer]:
+              - cell "·" [ref=e1235]
+              - cell "25" [ref=e1236]
+              - cell [ref=e1237]:
+                - generic [ref=e1238]:
+                  - link "View providers" [ref=e1239]:
+                    - /url: /models/chat/step-3.5-flash
+                    - generic [ref=e1240]: Step 3.5 Flash
+                    - generic [ref=e1241]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1242]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1243]: 256K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1244]: Tools
+                  - button "Copy model id" [ref=e1246]
+              - cell "no data" [ref=e1250]
+              - cell "no data" [ref=e1255]
+              - cell "74" [ref=e1260]
+              - cell "—" [ref=e1265]
+              - cell "0.584" [ref=e1266]
+              - cell [ref=e1267]:
+                - switch [checked] [ref=e1268]
+                - checkbox [checked] [aria-hidden] [ref=e1269]
+            - row [ref=e1270] [cursor=pointer]:
+              - cell "·" [ref=e1271]
+              - cell "26" [ref=e1272]
+              - cell [ref=e1273]:
+                - generic [ref=e1274]:
+                  - link "View providers" [ref=e1275]:
+                    - /url: /models/chat/glm-4.7-flash
+                    - generic [ref=e1276]: GLM-4.7 Flash
+                    - generic [ref=e1277]: 2 providers
+                    - generic "Total free tokens per month across this model's providers" [ref=e1279]: 45.0M/mo
+                    - generic "Context window" [ref=e1280]: 200K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1281]: Tools
+                  - button "Copy model id" [ref=e1283]
+              - cell "no data" [ref=e1287]
+              - cell "no data" [ref=e1292]
+              - cell "73" [ref=e1297]
+              - cell "—" [ref=e1302]
+              - cell "0.584 best of 2" [ref=e1303]:
+                - generic [ref=e1305]:
+                  - generic [ref=e1306]: "0.584"
+                  - generic [ref=e1307]: best of 2
+              - cell [ref=e1308]:
+                - switch [checked] [ref=e1309]
+                - checkbox [checked] [aria-hidden] [ref=e1310]
+            - row [ref=e1311] [cursor=pointer]:
+              - cell "·" [ref=e1312]
+              - cell "27" [ref=e1313]
+              - cell [ref=e1314]:
+                - generic [ref=e1315]:
+                  - link "View providers" [ref=e1316]:
+                    - /url: /models/chat/laguna-xs-2.1
+                    - generic [ref=e1317]: Laguna XS 2.1
+                    - generic [ref=e1318]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1319]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1320]: 262K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1321]: Tools
+                  - button "Copy model id" [ref=e1323]
+              - cell "no data" [ref=e1327]
+              - cell "no data" [ref=e1332]
+              - cell "73" [ref=e1337]
+              - cell "—" [ref=e1342]
+              - cell "0.584" [ref=e1343]
+              - cell [ref=e1344]:
+                - switch [checked] [ref=e1345]
+                - checkbox [checked] [aria-hidden] [ref=e1346]
+            - row [ref=e1347] [cursor=pointer]:
+              - cell "·" [ref=e1348]
+              - cell "28" [ref=e1349]
+              - cell [ref=e1350]:
+                - generic [ref=e1351]:
+                  - link "View providers" [ref=e1352]:
+                    - /url: /models/chat/poolside-laguna-xs-2.1
+                    - generic [ref=e1353]: Poolside Laguna XS 2.1
+                    - generic [ref=e1354]: nvidia
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1355]: 40 RPM
+                    - generic "Context window" [ref=e1356]: 262K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1357]: Tools
+                  - button "Copy model id" [ref=e1359]
+              - cell "no data" [ref=e1363]
+              - cell "no data" [ref=e1368]
+              - cell "73" [ref=e1373]
+              - cell "—" [ref=e1378]
+              - cell "0.584" [ref=e1379]
+              - cell [ref=e1380]:
+                - switch [checked] [ref=e1381]
+                - checkbox [checked] [aria-hidden] [ref=e1382]
+            - row [ref=e1383] [cursor=pointer]:
+              - cell "·" [ref=e1384]
+              - cell "29" [ref=e1385]
+              - cell [ref=e1386]:
+                - generic [ref=e1387]:
+                  - link "View providers" [ref=e1388]:
+                    - /url: /models/chat/nemotron-3-super-120b
+                    - generic [ref=e1389]: Nemotron 3 Super 120B
+                    - generic [ref=e1390]: nvidia
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1391]: 40 RPM
+                    - generic "Context window" [ref=e1392]: 262K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1393]: Tools
+                  - button "Copy model id" [ref=e1395]
+              - cell "no data" [ref=e1399]
+              - cell "no data" [ref=e1404]
+              - cell "50" [ref=e1409]
+              - cell "—" [ref=e1414]
+              - cell "0.525" [ref=e1415]
+              - cell [ref=e1416]:
+                - switch [checked] [ref=e1417]
+                - checkbox [checked] [aria-hidden] [ref=e1418]
+            - row [ref=e1419] [cursor=pointer]:
+              - cell "·" [ref=e1420]
+              - cell "30" [ref=e1421]
+              - cell [ref=e1422]:
+                - generic [ref=e1423]:
+                  - link "View providers" [ref=e1424]:
+                    - /url: /models/chat/nemotron-3-120b
+                    - generic [ref=e1425]: Nemotron 3 120B
+                    - generic [ref=e1426]: cloudflare
+                    - generic "Total free tokens per month across this model's providers" [ref=e1427]: 10.0M/mo
+                    - generic "Context window" [ref=e1428]: 262K ctx
+                  - button "Copy model id" [ref=e1430]
+              - cell "no data" [ref=e1434]
+              - cell "no data" [ref=e1439]
+              - cell "50" [ref=e1444]
+              - cell "—" [ref=e1449]
+              - cell "0.525" [ref=e1450]
+              - cell [ref=e1451]:
+                - switch [checked] [ref=e1452]
+                - checkbox [checked] [aria-hidden] [ref=e1453]
+            - row [ref=e1454] [cursor=pointer]:
+              - cell "·" [ref=e1455]
+              - cell "31" [ref=e1456]
+              - cell [ref=e1457]:
+                - generic [ref=e1458]:
+                  - link "View providers" [ref=e1459]:
+                    - /url: /models/chat/gemini-2.5-flash
+                    - generic [ref=e1460]: Gemini 2.5 Flash
+                    - generic [ref=e1461]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1462]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1463]: 1M ctx
+                    - generic "Accepts image input" [ref=e1464]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1465]: Tools
+                  - button "Copy model id" [ref=e1467]
+              - cell "no data" [ref=e1471]
+              - cell "no data" [ref=e1476]
+              - cell "50" [ref=e1481]
+              - cell "—" [ref=e1486]
+              - cell "0.525" [ref=e1487]
+              - cell [ref=e1488]:
+                - switch [checked] [ref=e1489]
+                - checkbox [checked] [aria-hidden] [ref=e1490]
+            - row [ref=e1491] [cursor=pointer]:
+              - cell "·" [ref=e1492]
+              - cell "32" [ref=e1493]
+              - cell [ref=e1494]:
+                - generic [ref=e1495]:
+                  - link "View providers" [ref=e1496]:
+                    - /url: /models/chat/gpt-4.1
+                    - generic [ref=e1497]: GPT 4.1
+                    - generic [ref=e1498]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1499]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1500]: 1M ctx
+                    - generic "Accepts image input" [ref=e1501]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1502]: Tools
+                  - button "Copy model id" [ref=e1504]
+              - cell "no data" [ref=e1508]
+              - cell "no data" [ref=e1513]
+              - cell "50" [ref=e1518]
+              - cell "—" [ref=e1523]
+              - cell "0.525" [ref=e1524]
+              - cell [ref=e1525]:
+                - switch [checked] [ref=e1526]
+                - checkbox [checked] [aria-hidden] [ref=e1527]
+            - row [ref=e1528] [cursor=pointer]:
+              - cell "·" [ref=e1529]
+              - cell "33" [ref=e1530]
+              - cell [ref=e1531]:
+                - generic [ref=e1532]:
+                  - link "View providers" [ref=e1533]:
+                    - /url: /models/chat/gpt-5-nano
+                    - generic [ref=e1534]: GPT 5 Nano
+                    - generic [ref=e1535]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1536]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1537]: 400K ctx
+                    - generic "Accepts image input" [ref=e1538]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1539]: Tools
+                  - button "Copy model id" [ref=e1541]
+              - cell "no data" [ref=e1545]
+              - cell "no data" [ref=e1550]
+              - cell "50" [ref=e1555]
+              - cell "—" [ref=e1560]
+              - cell "0.525" [ref=e1561]
+              - cell [ref=e1562]:
+                - switch [checked] [ref=e1563]
+                - checkbox [checked] [aria-hidden] [ref=e1564]
+            - row [ref=e1565] [cursor=pointer]:
+              - cell "·" [ref=e1566]
+              - cell "34" [ref=e1567]
+              - cell [ref=e1568]:
+                - generic [ref=e1569]:
+                  - link "View providers" [ref=e1570]:
+                    - /url: /models/chat/nemotron-3.5-lightning
+                    - generic [ref=e1571]: Nemotron 3.5 Lightning
+                    - generic [ref=e1572]: 2 providers
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1574]: 20 RPM
+                    - generic "Context window" [ref=e1575]: 1M ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1576]: Tools
+                  - button "Copy model id" [ref=e1578]
+              - cell "no data" [ref=e1582]
+              - cell "no data" [ref=e1587]
+              - cell "50" [ref=e1592]
+              - cell "—" [ref=e1597]
+              - cell "0.525 best of 2" [ref=e1598]:
+                - generic [ref=e1600]:
+                  - generic [ref=e1601]: "0.525"
+                  - generic [ref=e1602]: best of 2
+              - cell [ref=e1603]:
+                - switch [checked] [ref=e1604]
+                - checkbox [checked] [aria-hidden] [ref=e1605]
+            - row [ref=e1606] [cursor=pointer]:
+              - cell "·" [ref=e1607]
+              - cell "35" [ref=e1608]
+              - cell [ref=e1609]:
+                - generic [ref=e1610]:
+                  - link "View providers" [ref=e1611]:
+                    - /url: /models/chat/nemotron-3.5-lightning-30b-a3b
+                    - generic [ref=e1612]: Nemotron 3.5 Lightning 30B A3B
+                    - generic [ref=e1613]: nvidia
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1614]: 40 RPM
+                    - generic "Context window" [ref=e1615]: 1M ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1616]: Tools
+                  - button "Copy model id" [ref=e1618]
+              - cell "no data" [ref=e1622]
+              - cell "no data" [ref=e1627]
+              - cell "50" [ref=e1632]
+              - cell "—" [ref=e1637]
+              - cell "0.525" [ref=e1638]
+              - cell [ref=e1639]:
+                - switch [checked] [ref=e1640]
+                - checkbox [checked] [aria-hidden] [ref=e1641]
+            - row [ref=e1642] [cursor=pointer]:
+              - cell "·" [ref=e1643]
+              - cell "36" [ref=e1644]
+              - cell [ref=e1645]:
+                - generic [ref=e1646]:
+                  - link "View providers" [ref=e1647]:
+                    - /url: /models/chat/gpt-oss-120b
+                    - generic [ref=e1648]: GPT-OSS 120B
+                    - generic [ref=e1649]: 2 providers
+                    - generic "Total free tokens per month across this model's providers" [ref=e1651]: 45.0M/mo
+                    - generic "Context window" [ref=e1652]: 131K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1653]: Tools
+                  - button "Copy model id" [ref=e1655]
+              - cell "no data" [ref=e1659]
+              - cell "no data" [ref=e1664]
+              - cell "50" [ref=e1669]
+              - cell "—" [ref=e1674]
+              - cell "0.525 best of 2" [ref=e1675]:
+                - generic [ref=e1677]:
+                  - generic [ref=e1678]: "0.525"
+                  - generic [ref=e1679]: best of 2
+              - cell [ref=e1680]:
+                - switch [checked] [ref=e1681]
+                - checkbox [checked] [aria-hidden] [ref=e1682]
+            - row [ref=e1683] [cursor=pointer]:
+              - cell "·" [ref=e1684]
+              - cell "37" [ref=e1685]
+              - cell [ref=e1686]:
+                - generic [ref=e1687]:
+                  - link "View providers" [ref=e1688]:
+                    - /url: /models/chat/longcat-flash-chat
+                    - generic [ref=e1689]: LongCat Flash Chat
+                    - generic [ref=e1690]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1691]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1692]: 128K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1693]: Tools
+                  - button "Copy model id" [ref=e1695]
+              - cell "no data" [ref=e1699]
+              - cell "no data" [ref=e1704]
+              - cell "50" [ref=e1709]
+              - cell "—" [ref=e1714]
+              - cell "0.525" [ref=e1715]
+              - cell [ref=e1716]:
+                - switch [checked] [ref=e1717]
+                - checkbox [checked] [aria-hidden] [ref=e1718]
+            - row [ref=e1719] [cursor=pointer]:
+              - cell "·" [ref=e1720]
+              - cell "38" [ref=e1721]
+              - cell [ref=e1722]:
+                - generic [ref=e1723]:
+                  - link "View providers" [ref=e1724]:
+                    - /url: /models/chat/gpt-4.1-mini
+                    - generic [ref=e1725]: GPT 4.1 Mini
+                    - generic [ref=e1726]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1727]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1728]: 1M ctx
+                    - generic "Accepts image input" [ref=e1729]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1730]: Tools
+                  - button "Copy model id" [ref=e1732]
+              - cell "no data" [ref=e1736]
+              - cell "no data" [ref=e1741]
+              - cell "50" [ref=e1746]
+              - cell "—" [ref=e1751]
+              - cell "0.525" [ref=e1752]
+              - cell [ref=e1753]:
+                - switch [checked] [ref=e1754]
+                - checkbox [checked] [aria-hidden] [ref=e1755]
+            - row [ref=e1756] [cursor=pointer]:
+              - cell "·" [ref=e1757]
+              - cell "39" [ref=e1758]
+              - cell [ref=e1759]:
+                - generic [ref=e1760]:
+                  - link "View providers" [ref=e1761]:
+                    - /url: /models/chat/north-mini-code
+                    - generic [ref=e1762]: North Mini Code
+                    - generic [ref=e1763]: openrouter
+                    - generic "Total free tokens per month across this model's providers" [ref=e1764]: 6.0M/mo
+                    - generic "Context window" [ref=e1765]: 256K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1766]: Tools
+                  - button "Copy model id" [ref=e1768]
+              - cell "no data" [ref=e1772]
+              - cell "no data" [ref=e1777]
+              - cell "50" [ref=e1782]
+              - cell "—" [ref=e1787]
+              - cell "0.525" [ref=e1788]
+              - cell [ref=e1789]:
+                - switch [checked] [ref=e1790]
+                - checkbox [checked] [aria-hidden] [ref=e1791]
+            - row [ref=e1792] [cursor=pointer]:
+              - cell "·" [ref=e1793]
+              - cell "40" [ref=e1794]
+              - cell [ref=e1795]:
+                - generic [ref=e1796]:
+                  - link "View providers" [ref=e1797]:
+                    - /url: /models/chat/qwq-32b
+                    - generic [ref=e1798]: QwQ 32B
+                    - generic [ref=e1799]: cloudflare
+                    - generic "Total free tokens per month across this model's providers" [ref=e1800]: 20.0M/mo
+                    - generic "Context window" [ref=e1801]: 131K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1802]: Tools
+                  - button "Copy model id" [ref=e1804]
+              - cell "no data" [ref=e1808]
+              - cell "no data" [ref=e1813]
+              - cell "50" [ref=e1818]
+              - cell "—" [ref=e1823]
+              - cell "0.525" [ref=e1824]
+              - cell [ref=e1825]:
+                - switch [checked] [ref=e1826]
+                - checkbox [checked] [aria-hidden] [ref=e1827]
+            - row [ref=e1828] [cursor=pointer]:
+              - cell "·" [ref=e1829]
+              - cell "41" [ref=e1830]
+              - cell [ref=e1831]:
+                - generic [ref=e1832]:
+                  - link "View providers" [ref=e1833]:
+                    - /url: /models/chat/qwen3-coder-30b-a3b-instruct
+                    - generic [ref=e1834]: Qwen3 Coder 30B A3B Instruct
+                    - generic [ref=e1835]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1836]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1837]: 262K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1838]: Tools
+                  - button "Copy model id" [ref=e1840]
+              - cell "no data" [ref=e1844]
+              - cell "no data" [ref=e1849]
+              - cell "50" [ref=e1854]
+              - cell "—" [ref=e1859]
+              - cell "0.525" [ref=e1860]
+              - cell [ref=e1861]:
+                - switch [checked] [ref=e1862]
+                - checkbox [checked] [aria-hidden] [ref=e1863]
+            - row [ref=e1864] [cursor=pointer]:
+              - cell "·" [ref=e1865]
+              - cell "42" [ref=e1866]
+              - cell [ref=e1867]:
+                - generic [ref=e1868]:
+                  - link "View providers" [ref=e1869]:
+                    - /url: /models/chat/diffusiongemma-26b-a4b-it
+                    - generic [ref=e1870]: DiffusionGemma 26B A4B IT
+                    - generic [ref=e1871]: nvidia
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1872]: 40 RPM
+                    - generic "Context window" [ref=e1873]: 262K ctx
+                    - generic "Accepts image input" [ref=e1874]: Vision
+                  - button "Copy model id" [ref=e1876]
+              - cell "no data" [ref=e1880]
+              - cell "no data" [ref=e1885]
+              - cell "50" [ref=e1890]
+              - cell "—" [ref=e1895]
+              - cell "0.525" [ref=e1896]
+              - cell [ref=e1897]:
+                - switch [checked] [ref=e1898]
+                - checkbox [checked] [aria-hidden] [ref=e1899]
+            - row [ref=e1900] [cursor=pointer]:
+              - cell "·" [ref=e1901]
+              - cell "43" [ref=e1902]
+              - cell [ref=e1903]:
+                - generic [ref=e1904]:
+                  - link "View providers" [ref=e1905]:
+                    - /url: /models/chat/nemotron-3-nano-30b-reasoning
+                    - generic [ref=e1906]: Nemotron 3 Nano 30B Reasoning
+                    - generic [ref=e1907]: openrouter
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1908]: 20 RPM
+                    - generic "Context window" [ref=e1909]: 262K ctx
+                  - button "Copy model id" [ref=e1911]
+              - cell "no data" [ref=e1915]
+              - cell "no data" [ref=e1920]
+              - cell "50" [ref=e1925]
+              - cell "—" [ref=e1930]
+              - cell "0.525" [ref=e1931]
+              - cell [ref=e1932]:
+                - switch [checked] [ref=e1933]
+                - checkbox [checked] [aria-hidden] [ref=e1934]
+            - row [ref=e1935] [cursor=pointer]:
+              - cell "·" [ref=e1936]
+              - cell "44" [ref=e1937]
+              - cell [ref=e1938]:
+                - generic [ref=e1939]:
+                  - link "View providers" [ref=e1940]:
+                    - /url: /models/chat/gpt-oss-20b
+                    - generic [ref=e1941]: GPT-OSS 20B
+                    - generic [ref=e1942]: 2 providers
+                    - generic "Total free tokens per month across this model's providers" [ref=e1944]: 45.0M/mo
+                    - generic "Context window" [ref=e1945]: 131K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1946]: Tools
+                  - button "Copy model id" [ref=e1948]
+              - cell "no data" [ref=e1952]
+              - cell "no data" [ref=e1957]
+              - cell "50" [ref=e1962]
+              - cell "—" [ref=e1967]
+              - cell "0.525 best of 2" [ref=e1968]:
+                - generic [ref=e1970]:
+                  - generic [ref=e1971]: "0.525"
+                  - generic [ref=e1972]: best of 2
+              - cell [ref=e1973]:
+                - switch [checked] [ref=e1974]
+                - checkbox [checked] [aria-hidden] [ref=e1975]
+            - row [ref=e1976] [cursor=pointer]:
+              - cell "·" [ref=e1977]
+              - cell "45" [ref=e1978]
+              - cell [ref=e1979]:
+                - generic [ref=e1980]:
+                  - link "View providers" [ref=e1981]:
+                    - /url: /models/chat/gemini-2.5-flash-lite
+                    - generic [ref=e1982]: Gemini 2.5 Flash-Lite
+                    - generic [ref=e1983]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e1984]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e1985]: 1M ctx
+                    - generic "Accepts image input" [ref=e1986]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e1987]: Tools
+                  - button "Copy model id" [ref=e1989]
+              - cell "no data" [ref=e1993]
+              - cell "no data" [ref=e1998]
+              - cell "50" [ref=e2003]
+              - cell "—" [ref=e2008]
+              - cell "0.525" [ref=e2009]
+              - cell [ref=e2010]:
+                - switch [checked] [ref=e2011]
+                - checkbox [checked] [aria-hidden] [ref=e2012]
+            - row [ref=e2013] [cursor=pointer]:
+              - cell "·" [ref=e2014]
+              - cell "46" [ref=e2015]
+              - cell [ref=e2016]:
+                - generic [ref=e2017]:
+                  - link "View providers" [ref=e2018]:
+                    - /url: /models/chat/nemotron-3-nano-omni
+                    - generic [ref=e2019]: Nemotron 3 Nano Omni
+                    - generic [ref=e2020]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e2021]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e2022]: 256K ctx
+                    - generic "Accepts image input" [ref=e2023]: Vision
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e2024]: Tools
+                  - button "Copy model id" [ref=e2026]
+              - cell "no data" [ref=e2030]
+              - cell "no data" [ref=e2035]
+              - cell "50" [ref=e2040]
+              - cell "—" [ref=e2045]
+              - cell "0.525" [ref=e2046]
+              - cell [ref=e2047]:
+                - switch [checked] [ref=e2048]
+                - checkbox [checked] [aria-hidden] [ref=e2049]
+            - row [ref=e2050] [cursor=pointer]:
+              - cell "·" [ref=e2051]
+              - cell "47" [ref=e2052]
+              - cell [ref=e2053]:
+                - generic [ref=e2054]:
+                  - link "View providers" [ref=e2055]:
+                    - /url: /models/chat/nemotron-3-nano-omni-30b-a3b-reasoning
+                    - generic [ref=e2056]: Nemotron 3 Nano Omni 30B A3B Reasoning
+                    - generic [ref=e2057]: nvidia
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e2058]: 40 RPM
+                    - generic "Context window" [ref=e2059]: 262K ctx
+                    - generic "Accepts image input" [ref=e2060]: Vision
+                  - button "Copy model id" [ref=e2062]
+              - cell "no data" [ref=e2066]
+              - cell "no data" [ref=e2071]
+              - cell "50" [ref=e2076]
+              - cell "—" [ref=e2081]
+              - cell "0.525" [ref=e2082]
+              - cell [ref=e2083]:
+                - switch [checked] [ref=e2084]
+                - checkbox [checked] [aria-hidden] [ref=e2085]
+            - row [ref=e2086] [cursor=pointer]:
+              - cell "·" [ref=e2087]
+              - cell "48" [ref=e2088]
+              - cell [ref=e2089]:
+                - generic [ref=e2090]:
+                  - link "View providers" [ref=e2091]:
+                    - /url: /models/chat/deepseek-r1-distill-qwen-32b
+                    - generic [ref=e2092]: DeepSeek R1 Distill Qwen 32B
+                    - generic [ref=e2093]: cloudflare
+                    - generic "Total free tokens per month across this model's providers" [ref=e2094]: 5.0M/mo
+                    - generic "Context window" [ref=e2095]: 131K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e2096]: Tools
+                  - button "Copy model id" [ref=e2098]
+              - cell "no data" [ref=e2102]
+              - cell "no data" [ref=e2107]
+              - cell "50" [ref=e2112]
+              - cell "—" [ref=e2117]
+              - cell "0.524" [ref=e2118]
+              - cell [ref=e2119]:
+                - switch [checked] [ref=e2120]
+                - checkbox [checked] [aria-hidden] [ref=e2121]
+            - row [ref=e2122] [cursor=pointer]:
+              - cell "·" [ref=e2123]
+              - cell "49" [ref=e2124]
+              - cell [ref=e2125]:
+                - generic [ref=e2126]:
+                  - link "View providers" [ref=e2127]:
+                    - /url: /models/chat/r1-distill-qwen-32b
+                    - generic [ref=e2128]: R1 Distill Qwen 32B
+                    - generic [ref=e2129]: electronhub
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e2130]: $0.25/week shared recurring credit
+                    - generic "Context window" [ref=e2131]: 131K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e2132]: Tools
+                  - button "Copy model id" [ref=e2134]
+              - cell "no data" [ref=e2138]
+              - cell "no data" [ref=e2143]
+              - cell "50" [ref=e2148]
+              - cell "—" [ref=e2153]
+              - cell "0.524" [ref=e2154]
+              - cell [ref=e2155]:
+                - switch [checked] [ref=e2156]
+                - checkbox [checked] [aria-hidden] [ref=e2157]
+            - row [ref=e2158] [cursor=pointer]:
+              - cell "·" [ref=e2159]
+              - cell "50" [ref=e2160]
+              - cell [ref=e2161]:
+                - generic [ref=e2162]:
+                  - link "View providers" [ref=e2163]:
+                    - /url: /models/chat/lfm2.5-2.6b
+                    - generic [ref=e2164]: LFM2.5 2.6B
+                    - generic [ref=e2165]: openrouter
+                    - generic "Rate-limited — no fixed monthly token budget" [ref=e2166]: 20 RPM
+                    - generic "Context window" [ref=e2167]: 33K ctx
+                    - generic "Emits structured tool calls, so it is eligible for tool-bearing requests" [ref=e2168]: Tools
+                  - button "Copy model id" [ref=e2170]
+              - cell "no data" [ref=e2174]
+              - cell "no data" [ref=e2179]
+              - cell "50" [ref=e2184]
+              - cell "—" [ref=e2189]
+              - cell "0.524" [ref=e2190]
+              - cell [ref=e2191]:
+                - switch [checked] [ref=e2192]
+                - checkbox [checked] [aria-hidden] [ref=e2193]
+        - paragraph [ref=e2195]: "Hidden (no keys): google, zhipu, mistral, cohere, groq, llm7, aclide, agnes, aion, airforce, bazaarlink, blaze, blockrun, clod, dreamprompting, gizmo, kilo, llmtr, logfare, modelscope, moondream, nara, ovh, radeon, requesty, router9, routeway, sealion, septor, speka, unorouter, waterfall, xkiro"

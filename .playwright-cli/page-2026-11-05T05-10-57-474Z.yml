@@ -1,0 +1,164 @@
+- generic [ref=e58]:
+  - banner [ref=e59]:
+    - generic [ref=e60]:
+      - link "FreeLLMAPI" [ref=e61] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e64]:
+        - generic [ref=e65]:
+          - link "Models" [ref=e66] [cursor=pointer]:
+            - /url: /models
+          - button "Browse model types" [ref=e67]
+        - link "Playground" [ref=e70] [cursor=pointer]:
+          - /url: /playground
+        - link "Keys" [active] [ref=e71] [cursor=pointer]:
+          - /url: /keys
+        - link "Agents" [ref=e72] [cursor=pointer]:
+          - /url: /agents
+        - generic [ref=e73]:
+          - link "Analytics" [ref=e74] [cursor=pointer]:
+            - /url: /analytics
+          - button "Analytics pages" [ref=e75]
+        - link "Premium" [ref=e78] [cursor=pointer]:
+          - /url: /premium
+      - generic [ref=e79]:
+        - button "Command palette" [ref=e80]:
+          - generic [ref=e81]: Ctrl K
+        - button "Open navigation menu" [ref=e82]
+  - main [ref=e83]:
+    - generic [ref=e2196]:
+      - generic [ref=e2197]:
+        - generic [ref=e2198]:
+          - heading "Keys" [level=1] [ref=e2199]
+          - paragraph [ref=e2200]: Provider credentials and the unified API key your apps connect with.
+        - generic [ref=e2201]:
+          - button "Check all" [ref=e2202]
+          - button "Export" [ref=e2203]
+          - button "Add key" [ref=e2204]
+          - tablist "Keys" [ref=e2205]:
+            - tab "Providers" [selected] [ref=e2206]
+            - tab "Quota signals" [ref=e2207]
+            - tab "Unified API key" [ref=e2208]
+            - tab "Anthropic" [ref=e2209]
+            - tab "Agents" [ref=e2210]
+      - generic [ref=e2211]:
+        - button "8 of 77 providers configured" [ref=e2213]
+        - generic [ref=e2216]:
+          - generic [ref=e2217]:
+            - textbox "Filter providers or keys" [ref=e2219]
+            - tablist "All" [ref=e2220]:
+              - tab "All" [selected] [ref=e2221]
+              - tab "Healthy" [ref=e2222]
+              - tab "Issues" [ref=e2223]
+              - tab "Disabled" [ref=e2224]
+            - generic [ref=e2225]: 8 providers · 8 keys
+          - generic [ref=e2226]:
+            - generic [ref=e2227]:
+              - generic [ref=e2228]:
+                - switch [ref=e2229]
+                - checkbox [aria-hidden] [ref=e2230]
+                - button "Google AI Studio 1 1 issue" [expanded] [ref=e2231]:
+                  - heading "Google AI Studio" [level=3] [ref=e2232]
+                  - generic [ref=e2233]: "1"
+                  - generic [ref=e2234]: 1 issue
+                - button "Provider actions" [ref=e2237]
+                - button "Hide" [ref=e2238]
+              - generic [ref=e2240]:
+                - generic [ref=e2241]:
+                  - checkbox "Select this key" [ref=e2242] [cursor=pointer]
+                  - switch "Enable" [ref=e2243]
+                  - checkbox [aria-hidden] [ref=e2244]
+                  - code [ref=e2246]: AIza...CTED
+                  - button "main" [ref=e2247]
+                  - generic [ref=e2248]: invalid
+                  - generic [ref=e2249]: 04:23 AM
+                  - generic [ref=e2251]:
+                    - button "Edit key" [ref=e2252]
+                    - button "Edit models" [ref=e2254]
+                    - button "Copy full key" [ref=e2256]
+                    - button "Model scope" [ref=e2258]
+                    - button "Check now" [ref=e2260]
+                    - button "Remove" [ref=e2261]
+                - status [ref=e2262]:
+                  - 'generic "Google key validation failed (HTTP 400 API_KEY_INVALID): API key not valid. Please pass a valid API key." [ref=e2265]'
+            - generic [ref=e2267]:
+              - switch [checked] [ref=e2268]
+              - checkbox [checked] [aria-hidden] [ref=e2269]
+              - button "ElectronHub (shared weekly credits) 1 1 healthy" [ref=e2270]:
+                - heading "ElectronHub (shared weekly credits)" [level=3] [ref=e2271]
+                - generic [ref=e2272]: "1"
+                - generic [ref=e2273]: 1 healthy
+              - button "Provider actions" [ref=e2276]
+              - button "Show" [ref=e2277]
+            - generic [ref=e2279]:
+              - switch [checked] [ref=e2280]
+              - checkbox [checked] [aria-hidden] [ref=e2281]
+              - button "NVIDIA NIM 1 1 healthy" [ref=e2282]:
+                - heading "NVIDIA NIM" [level=3] [ref=e2283]
+                - generic [ref=e2284]: "1"
+                - generic [ref=e2285]: 1 healthy
+              - button "Provider actions" [ref=e2288]
+              - button "Show" [ref=e2289]
+            - generic [ref=e2291]:
+              - switch [checked] [ref=e2292]
+              - checkbox [checked] [aria-hidden] [ref=e2293]
+              - button "OpenRouter 1 1 healthy" [ref=e2294]:
+                - heading "OpenRouter" [level=3] [ref=e2295]
+                - generic [ref=e2296]: "1"
+                - generic [ref=e2297]: 1 healthy
+              - button "Provider actions" [ref=e2300]
+              - button "Show" [ref=e2301]
+            - generic [ref=e2303]:
+              - switch [checked] [ref=e2304]
+              - checkbox [checked] [aria-hidden] [ref=e2305]
+              - button "Cloudflare Workers AI 1 1 healthy" [ref=e2306]:
+                - heading "Cloudflare Workers AI" [level=3] [ref=e2307]
+                - generic [ref=e2308]: "1"
+                - generic [ref=e2309]: 1 healthy
+              - button "Provider actions" [ref=e2312]
+              - button "Show" [ref=e2313]
+            - generic [ref=e2314]:
+              - generic [ref=e2315]:
+                - switch [ref=e2316]
+                - checkbox [aria-hidden] [ref=e2317]
+                - button "Zhipu AI (Z.ai) 1 1 issue" [expanded] [ref=e2318]:
+                  - heading "Zhipu AI (Z.ai)" [level=3] [ref=e2319]
+                  - generic [ref=e2320]: "1"
+                  - generic [ref=e2321]: 1 issue
+                - button "Provider actions" [ref=e2324]
+                - button "Hide" [ref=e2325]
+              - generic [ref=e2327]:
+                - generic [ref=e2328]:
+                  - checkbox "Select this key" [ref=e2329] [cursor=pointer]
+                  - switch "Enable" [ref=e2330]
+                  - checkbox [aria-hidden] [ref=e2331]
+                  - code [ref=e2333]: "****ED"
+                  - button "main" [ref=e2334]
+                  - generic [ref=e2335]: invalid
+                  - generic [ref=e2336]: 04:23 AM
+                  - generic [ref=e2338]:
+                    - button "Edit key" [ref=e2339]
+                    - button "Edit models" [ref=e2341]
+                    - button "Copy full key" [ref=e2343]
+                    - button "Model scope" [ref=e2345]
+                    - button "Check now" [ref=e2347]
+                    - button "Remove" [ref=e2348]
+                - status [ref=e2349]:
+                  - 'generic "Zhipu AI key validation failed (HTTP 401): 令牌已过期或验证不正确" [ref=e2352]'
+            - generic [ref=e2354]:
+              - switch [checked] [ref=e2355]
+              - checkbox [checked] [aria-hidden] [ref=e2356]
+              - button "OpenCode Zen (paid models only) 1 1 healthy" [ref=e2357]:
+                - heading "OpenCode Zen (paid models only)" [level=3] [ref=e2358]
+                - generic [ref=e2359]: "1"
+                - generic [ref=e2360]: 1 healthy
+              - button "Provider actions" [ref=e2363]
+              - button "Show" [ref=e2364]
+            - generic [ref=e2366]:
+              - switch [checked] [ref=e2367]
+              - checkbox [checked] [aria-hidden] [ref=e2368]
+              - button "AI Horde (no key needed, slow) 1 1 healthy" [ref=e2369]:
+                - heading "AI Horde (no key needed, slow)" [level=3] [ref=e2370]
+                - generic [ref=e2371]: "1"
+                - generic [ref=e2372]: 1 healthy
+              - button "Provider actions" [ref=e2375]
+              - button "Show" [ref=e2376]
