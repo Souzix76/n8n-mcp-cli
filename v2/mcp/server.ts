@@ -51,7 +51,7 @@ export class McpServer {
     return Array.from(this.tools.values());
   }
 
-  async callTool(name: string, args: unknown): Promise<unknown> {
+  async callTool(name: string, args: unknown): Promise<{ content: Array<{ type: string; text: string }> }> {
     const tool = this.tools.get(name);
 
     if (!tool) {
@@ -61,7 +61,15 @@ export class McpServer {
     // Check credential boundary before execution
     this.checkCredentialAccess(name, tool.allowedModes);
 
-    return tool.execution(args);
+    const result = await tool.execution(args);
+    return {
+      content: [
+        {
+          type: 'text',
+          text: JSON.stringify(result, null, 2),
+        },
+      ],
+    };
   }
 }
 

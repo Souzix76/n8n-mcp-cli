@@ -18,7 +18,7 @@ This prevents accidental credential leakage and enforces least-privilege access 
 ### Default Mode
 - **Default**: `read-only`
 - Can be overridden via `--credential-mode=external` CLI flag
-- Can be changed at runtime via `server.setCredentialMode('external')`
+- Can be changed at runtime via `McpServer.setCredentialMode('external')`
 
 ---
 
@@ -30,7 +30,8 @@ This prevents accidental credential leakage and enforces least-privilege access 
 | `get_workflow_health` | ✅ | ✅ | Get health score and risk summary |
 | `suggest_nodes` | ✅ | ✅ | Suggest compatible nodes (no API call) |
 | `diagnose_workflow` | ✅ | ✅ | Full diagnostics (read-only analysis) |
-| `create_workflow` | ❌ | ✅ | Create new workflow (placeholder) |
+| `get_n8n_version` | ✅ | ✅ | Get n8n version information |
+| `create_workflow` | ❌ | ✅ | Create new workflow (requires external mode) |
 
 > **Note**: `suggest_nodes` requires no API credentials as it uses static knowledge.
 
@@ -156,8 +157,8 @@ n8n-mcp-cli mcp --credential-mode=external
 
 ### 4. Validate Environment Early
 ```typescript
-// The dep-guard and validation layer check this at startup
-import { validateDependenciesSync } from './core/dep-guard.js';
+// The validation layer checks this at startup
+import { validateDependenciesSync } from './v2/core/validation.js';
 validateDependenciesSync(); // Throws if N8N_API_KEY missing in external mode
 ```
 
@@ -247,16 +248,6 @@ CLI args (--credential-mode)
 - [x] Structured error responses with remediation
 - [x] Tests for all boundary conditions
 - [x] Documentation
-
----
-
-## Future Enhancements
-
-1. **Audit Logging** - Log all credential boundary decisions
-2. **Scoped Credentials** - Per-workflow API keys
-3. **Time-Limited External Mode** - Auto-revert to read-only after TTL
-4. **Credential Rotation API** - Hot-reload credentials without restart
-5. **OAuth Integration** - Support n8n OAuth flows
 
 ---
 
